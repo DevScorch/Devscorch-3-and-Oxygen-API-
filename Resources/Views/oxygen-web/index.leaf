@@ -1,0 +1,253 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="/css/main.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+    <title>Devscorch 3.0 | Home</title>
+
+</head>
+
+<body> 
+
+    <body>
+      <div class="container-fluid">
+          <div class="first-container">
+              <div class="row nav-row">
+                  <div class="col-sm-12 col-md-6 col-lg-7 col-xl-8">
+                    <img class="logo" src="/assets/logo.png">
+                  </div>
+                  <div class="col-sm-12 col-md-6 col-lg-5 col-xl-4">
+                    <div class="social-buttons">
+                        <img class="social" src="/assets/facebook.png">
+                        <img class="social" src="/assets/instagram.png">
+                        <img class="social" src="/assets/twitter.png">
+                        <img class="social" src="/assets/youtube.png">
+                        <a href="/login" class="btn btn-secondary login" role="button" >Login</a>
+                    </div>
+                  </div>
+              </div>
+          </div>
+          <div class="second-container">
+              <div class="row content-row">
+                  <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6 w3-animate-left">
+                      <div class="heading grow">
+                          <p class="heading-p">
+                              VERSION 3.0 now Available
+                          </p>
+                          <h1 class="heading-h1">A whole new LMS (Learn management System)</h1>
+                      </div>
+                      <div class="row nested-row grow">
+                          <div class="col-4 ">
+                              <p class="practical-info">Build with:</p>
+                              <p class="system">Swift</p>
+                          </div>
+                          <div class="col-4">
+                            <p class="practical-info">Running on:</p>
+                            <p class="system">Ubuntu 20.04</p>
+                          </div>
+                          <div class="col-4">
+                            <p class="practical-info">Database:</p>
+                            <p class="system">PostgreSQL</p>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6 w3-animate-right">
+                    <div class="card grow">
+                        <div class="card-body">
+                          <h3 class="flame">FLAME Subscription</h3>
+                          <ul class="flame-list">
+                              <li class="flame-item">Courses</li>
+                              <li class="flame-item">Video Tutorials</li>
+                              <li class="flame-item">Written Tutorials</li>
+                              <li class="flame-item">Challenges</li>
+                              <li class="flame-item">Portfolio Projects</li>
+                              <li class="flame-item">Certification Training</li>
+                              <li class="flame-item">Much more...</li>
+                          </ul>
+                          <h3 class="flame">$9.99</h3>
+                          <a href="/register" class="btn btn-secondary register" role="button" >Register for free</a>
+                        </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <div class="third-container lazy">
+              <div class="row explaination-row">
+                  <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6 w3-animate-left">
+                      <div class="explaination grow">
+                          <p class="explain-p">
+                            With Devscorch we provide an easy-to-use platform where you can Learn and prepare yourself 
+                            for certification. Our courses are build in a unique way where we not only teach you how to use a 
+                            technology but we are gonna train you to get the certification. After our courses you will be confident enough to get 
+                            certified and getting a Job as a Developer.
+                          </p>
+                      </div>
+                  </div>
+                  <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6"></div>
+              </div>
+          </div>
+          <div class="fourth-container lazy">
+              <div class="row scorch-row">
+                  <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6 lazyload">
+                      <div class="scorch-intro">
+                        <h4 class="scorch-h3">4 Scorches with unlimited possibilities</h4>
+                        <p class="scorch-p">And more...</p>
+                      </div>
+                  </div>
+                  <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6"></div>
+              </div>
+              <div class="row card-row">
+                  <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3 w3-animate-zoom grow">
+                    <div class="card scorch-card">
+                        <div class="card-body">
+                          <img class="scorch-image" src="/assets/web.png">
+                          <h5 class="scorch-h5">Web Scorch</h5>
+                          <p class="scorch-p">HTML, CSS, Javascript, Angular, React, Bootstrap, Leaf, and much more</p>
+                        </div>
+                      </div>
+                  </div>
+                  <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3 w3-animate-zoom ">
+                    <div class="card scorch-card grow">
+                        <div class="card-body">
+                          <img class="scorch-image" src="/assets/web.png">
+                          <h5 class="scorch-h5">Web Scorch</h5>
+                          <p class="scorch-p">HTML, CSS, Javascript, Angular, React, Bootstrap, Leaf, and much more</p>
+                        </div>
+                      </div>
+                  </div>
+                  <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3 w3-animate-zoom">
+                    <div class="card scorch-card grow">
+                        <div class="card-body">
+                          <img class="scorch-image" src="/assets/web.png">
+                          <h5 class="scorch-h5">Web Scorch</h5>
+                          <p class="scorch-p">HTML, CSS, Javascript, Angular, React, Bootstrap, Leaf, and much more</p>
+                        </div>
+                      </div>
+                  </div>
+                  <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3 w3-animate-zoom">
+                    <div class="card scorch-card grow">
+                        <div class="card-body">
+                          <img class="scorch-image" src="/assets/web.png">
+                          <h5 class="scorch-h5">Web Scorch</h5>
+                          <p class="scorch-p">HTML, CSS, Javascript, Angular, React, Bootstrap, Leaf, and much more</p>
+                        </div>
+                      </div>
+                  </div>
+              </div>
+              <div class="row amazing-row">
+                  <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                      <div class="amazing-content grow">
+                          <h4 class="amazing-h4">Amazing Content!</h4>
+                          <p class="scorch-p">Some of our courses and projects.</p>
+                      </div>
+                  </div>
+              </div>
+              <div class="row list-row">
+                  <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4 w3-animate-zoom">
+                    <div class="card list-card">
+                        <div class="card-body">
+                          <ul class="content-list">
+                              <li class="content-list-item grow">HTML, CSS Course</li>
+                              <li class="content-list-item grow">Bootstrap Course</li>
+                              <li class="content-list-item grow">Angular Course</li>
+                              <li class="content-list-item grow">React Course</li>
+                              <li class="content-list-item grow">Mobile Course</li>
+                          </ul>
+                        </div>
+                      </div>
+                  </div>
+                  <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4 w3-animate-zoom">
+                    <div class="card list-card">
+                        <div class="card-body">
+                          <ul class="content-list">
+                              <li class="content-list-item grow" >Build 9Gag clone</li>
+                              <li class="content-list-item grow">Build Instagram clone</li>
+                              <li class="content-list-item grow">Build Netflix clone</li>
+                              <li class="content-list-item grow">Build flower model</li>
+                              <li class="content-list-item grow">Build your own LMS</li>
+                          </ul>
+                        </div>
+                      </div>
+                  </div>
+                  <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4 w3-animate-zoom">
+                    <div class="card list-card">
+                        <div class="card-body">
+                          <ul class="content-list">
+                              <li class="content-list-item grow">API and Backend</li>
+                              <li class="content-list-item grow">Database relations</li>
+                              <li class="content-list-item grow">Websockets</li>
+                              <li class="content-list-item grow">DevOps</li>
+                              <li class="content-list-item grow">Mobile Development</li>
+                          </ul>
+                        </div>
+                      </div>
+                  </div>
+              </div>
+              <div class="row why-row">
+                  <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6 w3-animate-zoom">
+                    <img class="why-image img-fluid grow" src="/assets/platform.png">
+                  </div>
+                  <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6 w3-animate-right">
+                    <div class="card why-card">
+                        <div class="card-body">
+                            <h3 class="scorch-h3">Why Devscorch?</h3>
+                          <ul class="why-list">
+                              <li class="content-list-item grow">Everything is recorded in 1080P</li>
+                              <li class="content-list-item grow">Fast Content Delivery System</li>
+                              <li class="content-list-item grow">Courses for everyone</li>
+                              <li class="content-list-item grow">Learn anywhere, anytime</li>
+                              <li class="content-list-item grow">In house developed LMS</li>
+                              <li class="content-list-item grow">Courses build to prepare you for certification</li>
+                              <li class="content-list-item grow">Affordable pricing</li>
+                          </ul>
+                        </div>
+                      </div>
+                  </div>
+                  </div>
+              </div>
+          </div>
+          <div class="fifth-container">
+              <div class="row email-row">
+                  <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                      <h3 class="scorch-h3">Subscribe to our NewsLetter!</h3>
+                  </div>
+              </div>
+              <div class="row form-row">
+                  <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                    <form>
+                        <div class="form-group">
+                          <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Please provide your email">
+                        </div>
+                        <button type="submit" class="btn btn-primary register space">Subscribe</button>
+                    </form>
+                  </div>
+              </div>
+          </div>
+          #embed("footer")
+          
+        </div>
+   
+
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+            crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+            crossorigin="anonymous"></script>
+</body>
+
+</html>

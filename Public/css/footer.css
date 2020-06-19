@@ -1,0 +1,25 @@
+/*Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Oxygen:wght@300;400;700&display=swap');
+
+
+.footer {
+    background-color: #111115;
+    min-height: 230px;
+}
+
+.footer-nav-row {
+    padding-top: 50px;
+}
+
+.disclaimer-row {
+    margin-top: 80px;
+    text-align: center;
+}
+
+.devscorch-h6 {
+    color: white;
+}
+
+.devscorch-p {
+    color: #E260D8;
+}

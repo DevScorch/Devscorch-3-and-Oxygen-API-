@@ -1,0 +1,96 @@
+/* Base CSS File with all Index CSS */
+
+
+/*Fonts */
+
+@import url('https://fonts.googleapis.com/css2?family=Oxygen:wght@300;400;700&display=swap');
+
+body {
+    background-color: #17171B;
+    font-family: 'Oxygen', sans-serif;
+}
+/* Navbar */
+
+.navbar-light .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(32, 87, 174, 1.0)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
+
+.navbar-nav {
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.logo {
+    width: 200px;
+    height: 30px;
+    margin-left: 0px;
+    display: inline;
+}
+
+nav .navbar-collapse .navbar-nav a{
+    color: white !important;
+    font-weight: bold;
+    font-family: 'Oxygen', Courier;
+}
+
+
+.drop-a {
+    color: black;
+    font-size: 15px;
+    font-family: 'Oxygen', Courier;
+}
+
+.drop-a-2 {
+    color: black;
+    font-size: 15px;
+    font-family: 'Oxygen', Courier;
+    font-weight: bold;
+}
+
+.dropdown {
+    margin-right: 0px;
+}
+
+.dropdown-menu {
+    background-color: #FFFFFF;
+        font-family: 'Oxygen', Courier;
+}
+
+.profile-img {
+    width: 30px;
+    height: 30px;
+    margin-right: auto;
+    margin-left: auto;
+    display: inline;
+    border-radius: 50%;
+}
+
+#cookie-footer {
+    bottom: 0;
+    width: 100%;
+    line-height: 30px;
+  }
+
+  .grow { transition: all .2s ease-in-out; }
+.grow:hover { transform: scale(1.1); }
+
+@media (max-width: 1100px) {
+   
+}
+
+@media (min-width: 1000px) {
+    
+}
+
+@media (max-width: 800px) {
+
+}
+
+@media (max-width: 600px) {
+    
+}
+
+@media (max-width: 550px) {
+    
+}

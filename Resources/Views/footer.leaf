@@ -1,0 +1,32 @@
+    <head>
+    <link rel="stylesheet" href="/css/footer.css">
+    </head>
+    <div class="footer">
+              <div class="row footer-nav-row">
+                  <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                    <ul class="nav justify-content-center">
+                        <li class="nav-item">
+                          <a class="nav-link text-white" href="/docs/terms-and-conditions-2020.pdf">User Agreement</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link text-white" href="/docs/privacy-agreement-2020.pdf">Privacy Agreement</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link text-white" href="#">CopyRight Agreement</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="#">About Devscorch</a>
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link text-white" href="#">Company Information</a>
+                        </li>
+                      </ul>
+                  </div>
+              </div>
+              <div class="row disclaimer-row">
+                  <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                      <h6 class="devscorch-h6">Devscorch 2020</h6>
+                      <p class="devscorch-p">Version 3.0.0</p>
+                  </div>
+              </div>
+    </div>
