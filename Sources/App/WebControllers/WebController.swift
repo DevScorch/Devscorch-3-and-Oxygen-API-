@@ -10,16 +10,33 @@ import Leaf
 import Fluent
 
 struct WebsiteController: RouteCollection {
+    
+    
     func boot(routes: RoutesBuilder) throws {
             
         //MARK: Authentication routes
+        
+        
+        
         routes.get(use: indexHandler)
+        routes.get("login", use: loginHandler)
+        routes.get("register", use: registerHandler)
  
         
     }
     
     func indexHandler(_ req: Request) throws -> EventLoopFuture<View> {
-        let context = IndexContext(title: "Devscorch 3.0 | Home")
+        let context = IndexContext(title: "\(title) Home")
         return req.view.render("oxygen-web/index", context)
+    }
+    
+    func loginHandler(_ req: Request) throws -> EventLoopFuture<View> {
+        let context = LoginContext(title: "\(title) Login")
+        return req.view.render(loginURL, context)
+    }
+    
+    func registerHandler(_ req:Request) throws -> EventLoopFuture<View> {
+        let context = RegisterContext(title: "\(title) Register")
+        return req.view.render(registerURL, context)
     }
 }

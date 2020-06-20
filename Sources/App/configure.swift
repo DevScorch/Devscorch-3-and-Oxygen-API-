@@ -5,8 +5,16 @@ import Leaf
 
 // configures your application
 public func configure(_ app: Application) throws {
+    
+    // DEVSCORCH: CORS MiddleWare
+    
+     let corsConfiguration = CORSMiddleware.Configuration(allowedOrigin: .all, allowedMethods: [.POST, .GET, .PUT, .OPTIONS, .DELETE, .PATCH], allowedHeaders: [.accept, .authorization, .contentType, .origin, .xRequestedWith, .userAgent, .accessControlAllowOrigin])
+    let corsMiddleWare = CORSMiddleware(configuration: corsConfiguration)
+    
+    
     // uncomment to serve files from /Public folder
      app.middleware.use(FileMiddleware(publicDirectory: app.directory.publicDirectory))
+     app.middleware.use(corsMiddleWare)
     
     // Configure leaf
     

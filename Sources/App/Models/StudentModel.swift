@@ -10,7 +10,14 @@ import FluentPostgresDriver
 import Vapor
 
 
-final class Student: Model, Content, Authenticatable {
+final class Student: Model, Content {
+    struct Public: Model {
+        let username: String
+        let id: UUID
+        let createdAt: Date?
+        let updatedAt: Date?
+    }
+    
     static let schema = "students"
     
     @ID(key: .id)
@@ -57,22 +64,11 @@ final class Student: Model, Content, Authenticatable {
         self.stripeID = stripeID
         self.isSubscribed = isSubscribed
     }
-    
-    final class Public: Model, Content {
-        static let schema = "public"
-        
-        @ID(key: .id)
-        var id: UUID?
-        
-        @Field(key: "username")
-        var username: String
+}
 
-        init() {}
-        
-        init(id: UUID, username: String) {
-            self.id = id
-            self.username = username
-        }
+extension Student: SessionAuthenticatable {
+    var sessionID: String {
+        self.username
     }
 }
 

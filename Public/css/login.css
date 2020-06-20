@@ -1,0 +1,73 @@
+body, html {
+    height: 100%;
+    background-color: #1A1A1E;
+}
+
+#full-height {
+    background-color:#17171B;
+    height: 100%;
+}
+
+.card {
+    background-color: transparent;
+    margin-top: 150px;
+    margin-right: auto;
+    margin-left: auto;
+    width: 25rem;
+    border: none;
+}
+
+.logo {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+.sign-in {
+    color: white;
+    margin-top: 20px;
+    text-align: center;
+}
+
+form {
+    margin-top: 40px;
+}
+
+.form-control {
+    text-align: center;
+    height: 50px;
+    border-radius: 15px;
+}
+
+.agreement {
+    text-align: center;
+    color: grey;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+.sign-in-button {
+    background: linear-gradient(0.25turn, #5A64E5, #CD49F5 );
+    color: white;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    width: 200px;
+    border-radius: 20px;
+    border: none;
+}
+
+.forgot-button {
+    background-color: transparent ;
+    margin-top: 20px;
+    font-size: 10px;
+    color: white;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    width: 200px;
+    border-radius: 20px;
+    border: none;
+}

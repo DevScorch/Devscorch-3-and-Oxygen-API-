@@ -12,7 +12,7 @@
     <link rel="stylesheet" type="text/css" href="/css/main.css">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
-    <title>Devscorch 3.0 | Home</title>
+        <title>#(title)</title>
 
 </head>
 
@@ -99,7 +99,7 @@
               <div class="row scorch-row">
                   <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6 lazyload">
                       <div class="scorch-intro">
-                        <h4 class="scorch-h3">4 Scorches with unlimited possibilities</h4>
+                        <h4 class="scorch-h3">4 Paths with unlimited possibilities</h4>
                         <p class="scorch-p">And more...</p>
                       </div>
                   </div>
@@ -202,7 +202,7 @@
                             <h3 class="scorch-h3">Why Devscorch?</h3>
                           <ul class="why-list">
                               <li class="content-list-item grow">Everything is recorded in 1080P</li>
-                              <li class="content-list-item grow">Fast Content Delivery System</li>
+                              <li class="content-list-item grow">Fast Content Delivery Network</li>
                               <li class="content-list-item grow">Courses for everyone</li>
                               <li class="content-list-item grow">Learn anywhere, anytime</li>
                               <li class="content-list-item grow">In house developed LMS</li>
@@ -232,7 +232,7 @@
                   </div>
               </div>
           </div>
-          #embed("footer")
+          #extend("oxygen-web/footer")
           
         </div>
    

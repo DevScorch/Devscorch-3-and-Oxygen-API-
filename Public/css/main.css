@@ -1,0 +1,364 @@
+@import url('https://fonts.googleapis.com/css2?family=Oxygen:wght@300;400;700&display=swap');
+
+body {
+    background-color: #17171B;
+    font-family: 'Oxygen', sans-serif;
+}
+
+.container-fluid {
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+/* First container */
+
+.first-container {
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 2000px;
+}
+
+.nav-row {
+    margin-top: 20px;
+}
+
+.logo {
+    width: 200px;
+    height: 30px;
+    margin-left: 20px;
+}
+
+.social-buttons {
+    
+}
+
+.social {
+    margin-left: 10px;
+}
+
+.login {
+    background-color: transparent;
+    margin-left: 10px;
+    height: 41px;
+    width: 150px;
+    border-radius: 15px;
+    border-color:  #5A64E5;
+}
+
+/* Second-container */
+
+.second-container {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 2000px;
+}
+
+.content-row {
+    margin-top: 150px;
+}
+
+.heading {
+    margin-left: auto;
+    margin-right: auto;
+    width: 500px;
+
+}
+
+.heading-p {
+    color: #E260D8;
+}
+
+.heading-h1 {
+    color: white;
+    font-size: 55px;
+    font-weight: bold;
+}
+
+.nested-row {
+    width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 25px;
+}
+
+.practical-info {
+    color: #E4E4E4;
+    font: 20px;
+}
+
+.system {
+    color: white;
+    font-size: 16px;
+}
+
+.card {
+    background-color: white;
+    width: 440px;
+    height: 462px;
+    margin-right: auto;
+    margin-left: auto;
+    border-radius: 10px;
+}
+
+.flame {
+    color: #E260D8;
+    font-weight: bold;
+    text-align: center;
+}
+
+.flame-list {
+    margin-left: 45px;
+    margin-top: 30px;
+    list-style-image: url("../assets/leaf.png");
+}
+
+.flame-item {
+    font-weight: bold;
+    font-size: 20px;
+    margin-top: 5px;
+}
+
+.register {
+    background: linear-gradient(0.25turn, #CD49F5, #5A64E5 );
+    height: 41px;
+    width: 180px;
+    border-radius: 15px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border: none;
+    padding-top: 10px;
+
+}
+
+/* Third Container */
+
+.third-container {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 2000px;
+    margin-bottom: 100px;
+}
+
+.explaination-row {
+    margin-top: 40px;
+}
+
+.explaination {
+    margin-left: auto;
+    margin-right: auto;
+    width: 500px;
+}
+
+.explain-p {
+    color: white;
+    font-weight: lighter;
+}
+
+/* Fourth Container */
+
+.fourth-container {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 2000px;
+    background-color: #111115;
+    min-height: 1620px;
+}
+
+.scorch-row {
+    margin-top: 30px;
+}
+
+.scorch-intro {
+    margin-left: auto;
+    margin-right: auto;
+    width: 500px;
+    margin-top: 80px;
+}
+
+.scorch-h3 {
+    display: inline;
+    color: white;
+}
+.scorch-p {
+    display: inline;
+    color: #B1B1B1;
+    font-size: 12px;
+}
+
+.card-row {
+    margin-top: 80px;
+    margin-left: 150px;
+    margin-right: 150px;
+}
+
+.scorch-card {
+    width: 270px;
+    height: 270px;
+    background-color: #1A1A1E;
+}
+
+.scorch-h5 {
+    margin-top: 40px;
+    font-weight: bold;
+    color: #ADADAD;
+}
+
+.amazing-row {
+    margin-top: 100px;
+}
+
+.amazing-content {
+    margin-right: auto;
+    margin-left: auto;
+    text-align: center;
+}
+
+.amazing-h4 {
+    color: white;
+    font-weight: bold;
+}
+
+.list-row {
+    margin-top: 50px;
+}
+
+.list-card {
+    margin-left: auto;
+    margin-right: auto;
+    background-color: transparent;
+    width: 270px;
+    height: 190px;
+}
+
+.content-list {
+    list-style-image: url("../assets/leaf.png");
+}
+
+.content-list-item {
+    color: white;
+    font-weight: lighter;
+    font-size: 16px;
+    margin-top: 8px;
+}
+
+.why-row {
+    margin-top: 150px;
+}
+
+.why-image {
+    margin-right: auto;
+    margin-left: auto;
+    display: block;
+    width: 640px;
+}
+
+.why-card {
+    background-color: transparent;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.why-list {
+    margin-top: 30px;
+    list-style-image: url("../assets/check.png");
+}
+
+/*Fifth Container */
+
+.fifht-container {
+    margin-right: auto;
+    margin-left: auto;
+    min-height: 600px;
+}
+
+.email-row {
+    text-align: center;
+    margin-top: 30px;
+    font-weight: bold;
+}
+
+.form-row {
+    margin-top: 150px;
+    margin-bottom: 150px;
+}
+
+.form-control {
+    max-width: 650px;
+    height: 59px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 15px;
+    border: none;
+    text-align: center;
+}
+
+.space {
+    margin-top: 70px;
+}
+
+
+.grow { transition: all .2s ease-in-out; }
+.grow:hover { transform: scale(1.1); }
+
+
+
+@media screen and (max-width: 1440px) {
+    .scorch-card {
+        margin-top: 20px;
+    }
+
+    .card-row {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+   
+
+    
+}
+
+@media screen and (max-width: 991px) {
+    .card {
+        margin-top: 30px;
+    }
+
+    .heading  {
+        text-align: center;
+    }
+
+    .practical-info {
+        text-align: center;
+    }
+
+    .system {
+        text-align: center;
+    }
+
+    .explaination {
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 980px) {
+    .why-card {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .heading-h1 {
+        font-size: 45px;
+    }
+}
+
+
+@media screen and (max-width: 765px) {
+    .social-buttons {
+        margin-top: 20px;
+        margin-left: 10px;
+    }
+
+    .card {
+        margin-top: 50px;
+    }
+}
