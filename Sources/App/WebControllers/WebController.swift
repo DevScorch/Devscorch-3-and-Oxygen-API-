@@ -21,6 +21,7 @@ struct WebsiteController: RouteCollection {
         routes.get(use: indexHandler)
         routes.get("login", use: loginHandler)
         routes.get("register", use: registerHandler)
+        routes.get("learning-guides", use: learningGuidesHandler)
  
         
     }
@@ -38,5 +39,14 @@ struct WebsiteController: RouteCollection {
     func registerHandler(_ req:Request) throws -> EventLoopFuture<View> {
         let context = RegisterContext(title: "\(title) Register")
         return req.view.render(registerURL, context)
+    }
+    
+    func learningGuidesHandler(_ req: Request) throws -> EventLoopFuture<View> {
+        let context = LearningGuidesContext(title: "\(title) Learning Guides")
+        return req.view.render(guidedLearningURL, context)
+    }
+    
+    func profileHandler(_ req: Request) throws -> {
+        
     }
 }

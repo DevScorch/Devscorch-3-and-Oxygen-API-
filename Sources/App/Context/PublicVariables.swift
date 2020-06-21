@@ -52,4 +52,8 @@ var errorpageURL = "\(baseURL)/error"
 var notFoundURL = "\(baseURL)/not-found"
 
 
+//MARK: Admin Render pages URLS
+
+var baseAdminURL = "oxygen-admin/"
+
 

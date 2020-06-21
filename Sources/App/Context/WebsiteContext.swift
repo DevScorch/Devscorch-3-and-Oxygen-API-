@@ -22,3 +22,7 @@ struct RegisterContext: Codable {
     var title: String
 }
 
+struct LearningGuidesContext: Codable {
+    var title: String
+}
+

@@ -11,12 +11,7 @@ import Vapor
 
 
 final class Student: Model, Content {
-    struct Public: Model {
-        let username: String
-        let id: UUID
-        let createdAt: Date?
-        let updatedAt: Date?
-    }
+   
     
     static let schema = "students"
     
