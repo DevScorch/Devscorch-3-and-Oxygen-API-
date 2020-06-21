@@ -15,7 +15,7 @@ final class Student: Model, Content {
     
     static let schema = "students"
     
-    @ID(key: .id)
+    @ID(key: "id")
     var id: UUID?
     
     @Field(key: "username")

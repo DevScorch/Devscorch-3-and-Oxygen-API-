@@ -12,7 +12,7 @@ import FluentPostgresDriver
 final class Challenge: Model, Content {
     static let schema = "challenges"
     
-    @ID(key: .id)
+    @ID(key: "id")
     var id: UUID?
     
     @Field(key: "title")

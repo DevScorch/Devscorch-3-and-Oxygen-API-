@@ -14,7 +14,7 @@ var oxygenVersion: Double = 1.0
 
 //MARK: Titles
 
-var title: String = "Devscorch \(versionNumber)"
+var title: String = "Devscorch \(versionNumber) |"
 
 //MARK: Learn Environment Render Page URLS
 

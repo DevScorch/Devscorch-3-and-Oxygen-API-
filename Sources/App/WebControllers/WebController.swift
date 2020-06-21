@@ -46,7 +46,7 @@ struct WebsiteController: RouteCollection {
         return req.view.render(guidedLearningURL, context)
     }
     
-    func profileHandler(_ req: Request) throws -> {
-        
-    }
+//    func profileHandler(_ req: Request) throws -> {
+//        
+//    }
 }
