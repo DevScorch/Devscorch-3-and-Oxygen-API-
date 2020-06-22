@@ -27,10 +27,10 @@
                   </div>
                   <div class="col-sm-12 col-md-6 col-lg-5 col-xl-4">
                     <div class="social-buttons">
-                        <img class="social" src="/assets/facebook.png">
-                        <img class="social" src="/assets/instagram.png">
-                        <img class="social" src="/assets/twitter.png">
-                        <img class="social" src="/assets/youtube.png">
+                        <a href="https://facebook.com/devscorch" ><img class="social" src="/assets/facebook.png"></a>
+                        <a href="https://instagram.com/devscorch"><img class="social" src="/assets/instagram.png"></a>
+                        <a href="https://twitter.com/devscorch"><img class="social" src="/assets/twitter.png"></a>
+                        <a href="https://www.youtube.com/channel/UCh70RML4P-WH65-UtvHsx1A?view_as=subscriber"><img class="social" src="/assets/youtube.png"></a>
                         <a href="/login" class="btn btn-secondary login" role="button" >Login</a>
                     </div>
                   </div>

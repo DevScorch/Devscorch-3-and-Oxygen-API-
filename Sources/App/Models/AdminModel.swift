@@ -56,5 +56,7 @@ final class Admin: Model, Content {
 }
 
 extension Student {
-    static func create(from userSignup: UserS)
+    static func create(from userSignup: Student) {
+        
+    }
 }
