@@ -10,7 +10,14 @@ import FluentPostgresDriver
 import Vapor
 
 
-final class Student: Model, Content {
+final class Student: Model {
+    
+    struct Public: Content {
+      let username: String
+      let id: UUID
+      let createdAt: Date?
+      let updatedAt: Date?
+    }
    
     
     static let schema = "students"
