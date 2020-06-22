@@ -54,3 +54,7 @@ final class Admin: Model, Content {
         self.linkedInURL = linkedInURL
     }
 }
+
+extension Student {
+    static func create(from userSignup: UserS)
+}
