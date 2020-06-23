@@ -23,12 +23,11 @@ public func configure(_ app: Application) throws {
 
     app.databases.use(.postgres(
         hostname: Environment.get("localhost") ?? "localhost",
-        username: Environment.get("DATABASE_USERNAME") ?? "vapor_username",
-        password: Environment.get("DATABASE_PASSWORD") ?? "vapor_password",
-        database: Environment.get("DATABASE_NAME") ?? "vapor_database"
+        username: Environment.get("vapor") ?? "vapor",
+        password: Environment.get("password") ?? "password",
+        database: Environment.get("postgres") ?? "postgres"
     ), as: .psql)
 
-    app.migrations.add(CreateTodo())
     app.migrations.add(CreateAdmin())
     app.migrations.add(CreateCourse())
     app.migrations.add(CreateCourse())

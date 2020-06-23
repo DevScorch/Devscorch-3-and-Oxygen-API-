@@ -12,7 +12,7 @@ struct CreateCourse: Migration {
     
     func prepare(on database: Database) -> EventLoopFuture<Void> {
         return database.schema("courses")
-            .id()
+            .field("id", .uuid, .identifier(auto: true))
             .field("title", .string, .required)
             .field("description", .string, .required)
             .field("lessons", .int, .required)

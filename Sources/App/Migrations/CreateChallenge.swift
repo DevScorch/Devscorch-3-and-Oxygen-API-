@@ -11,7 +11,7 @@ import FluentPostgresDriver
 struct CreateChallenge: Migration {
     func prepare(on database: Database) -> EventLoopFuture<Void> {
         return database.schema("challenges")
-            .id()
+            .field("id", .uuid, .identifier(auto: true))
             .field("title", .string, .required)
             .field("description", .string, .required)
             .field("downloadURL", .string, .required)

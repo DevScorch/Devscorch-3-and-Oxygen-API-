@@ -11,7 +11,7 @@ struct CreatePath: Migration {
     
     func prepare(on database: Database) -> EventLoopFuture<Void> {
         return database.schema("paths")
-            .id()
+            .field("id", .uuid, .identifier(auto: true))
             .field("title", .string, .required)
             .create()
     }

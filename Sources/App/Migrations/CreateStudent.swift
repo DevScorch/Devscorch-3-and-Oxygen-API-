@@ -11,7 +11,7 @@ struct CreateStudent: Migration {
     
     func prepare(on database: Database) -> EventLoopFuture<Void> {
         return database.schema("students")
-        .id()
+        .field("id", .uuid, .identifier(auto: true))
             .field("username", .string, .required)
         .field("password", .string, .required)
         .field("name", .string)
