@@ -10,7 +10,7 @@ import Fluent
 struct CreateLesson: Migration {
     func prepare(on database: Database) -> EventLoopFuture<Void> {
         return database.schema("lessons")
-            .field("id", .uuid, .identifier(auto: true))
+            .id()
             .field("title", .string, .required)
             .field("duration", .string, .required)
             .field("number", .int)

@@ -10,19 +10,18 @@ import Leaf
 import Fluent
 
 struct WebsiteController: RouteCollection {
-    
-    
     func boot(routes: RoutesBuilder) throws {
             
         //MARK: Authentication routes
         
-        
+        let usersRoute = routes.grouped("users")
+        let tokenProtected = usersRoute.grouped(Token.authenticator())
+        let passwordProtected = usersRoute.grouped(User.authenticator())
         
         routes.get(use: indexHandler)
         routes.get("login", use: loginHandler)
         routes.get("register", use: registerHandler)
         routes.get("learning-guides", use: learningGuidesHandler)
- 
         
     }
     
@@ -36,6 +35,7 @@ struct WebsiteController: RouteCollection {
         return req.view.render(loginURL, context)
     }
     
+    
     func registerHandler(_ req:Request) throws -> EventLoopFuture<View> {
         let context = RegisterContext(title: "\(title) Register")
         return req.view.render(registerURL, context)
@@ -46,7 +46,8 @@ struct WebsiteController: RouteCollection {
         return req.view.render(guidedLearningURL, context)
     }
     
-//    func profileHandler(_ req: Request) throws -> {
+//    func selectedCourseHandler(_ req: Request) throws -> EventLoopFuture<View> {
 //        
 //    }
+    
 }

@@ -12,7 +12,7 @@ import Vapor
 final class Section: Model, Content {
     static let schema = "sections"
     
-    @ID(key: "id")
+    @ID(key: .id)
     var id: UUID?
     
     @Field(key: "title")

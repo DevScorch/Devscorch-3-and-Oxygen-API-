@@ -10,7 +10,7 @@ import Fluent
 struct CreateSection: Migration {
     func prepare(on database: Database) -> EventLoopFuture<Void> {
         return database.schema("sections")
-            .field("id", .uuid, .identifier(auto: true))
+            .id()
             .field("title", .string, .required)
             .field("description", .string, .required)
             .field("image", .string, .required)

@@ -11,7 +11,7 @@ struct CreateTutorial: Migration {
     
     func prepare(on database: Database) -> EventLoopFuture<Void> {
         return database.schema("tutorials")
-            .field("id", .uuid, .identifier(auto: true))
+            .id()
             .field("title", .string, .required)
             .field("description", .string, .required)
             .field("downloadURL", .string, .required)

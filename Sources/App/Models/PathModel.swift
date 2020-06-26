@@ -12,7 +12,7 @@ import Vapor
 final class Path: Model, Content {
     static let schema = "paths"
     
-    @Field(key: "id")
+    @ID(key: .id)
     var id: UUID?
     
     @Field(key: "title")

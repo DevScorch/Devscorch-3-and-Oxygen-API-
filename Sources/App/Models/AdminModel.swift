@@ -13,7 +13,7 @@ import FluentPostgresDriver
 final class Admin: Model, Content {
     static let schema = "admins"
     
-    @ID(key: "id")
+    @ID(key: .id)
     var id: UUID?
     
     @Field(key: "username")
@@ -55,8 +55,4 @@ final class Admin: Model, Content {
     }
 }
 
-extension Student {
-    static func create(from userSignup: Student) {
-        
-    }
-}
+

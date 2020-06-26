@@ -20,7 +20,7 @@ final class Token: Model {
     var id: UUID?
     
     @Parent(key: "user_id")
-    var user: Student
+    var user: User
     
     @Field(key: "value")
     var value: String
@@ -36,7 +36,7 @@ final class Token: Model {
     
     init() {}
     
-    init(id: UUID? = nil, userId: Student.IDValue, token: String,
+    init(id: UUID? = nil, userId: User.IDValue, token: String,
       source: SessionSource, expiresAt: Date?) {
       self.id = id
       self.$user.id = userId
@@ -44,4 +44,17 @@ final class Token: Model {
       self.source = source
       self.expiresAt = expiresAt
     }
+}
+
+extension Token: ModelTokenAuthenticatable {
+  static let valueKey = \Token.$value
+  static let userKey = \Token.$user
+  
+  var isValid: Bool {
+    guard let expiryDate = expiresAt else {
+      return true
+    }
+    
+    return expiryDate > Date()
+  }
 }
