@@ -13,10 +13,9 @@ struct WebsiteController: RouteCollection {
     func boot(routes: RoutesBuilder) throws {
             
         //MARK: Authentication routes
-        
-        let usersRoute = routes.grouped("users")
-        let tokenProtected = usersRoute.grouped(Token.authenticator())
-        let passwordProtected = usersRoute.grouped(User.authenticator())
+        let protectedRoute = authSessionRoute.grouped(User.redirectMiddleware(path: "/login"))
+        let tokenProtected = routes.grouped(Token.authenticator())
+        let passwordProtected = routes.grouped(User.authenticator())
         
         routes.get(use: indexHandler)
         routes.get("login", use: loginHandler)
