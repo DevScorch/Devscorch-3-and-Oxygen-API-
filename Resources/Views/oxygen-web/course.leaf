@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="/css/course.css">
+    <link rel="stylesheet" type="tex/css" href="/css/main.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+        <title>#(title)</title>
+
+</head>
+
+<body> 
+    #extend("base")
+
+<div class="container-fluid">
+    <div class="course-container">
+        <div class="row information-row">
+            <div class="col-xl-1"></div>
+            <div class="col-sm-12 col-md-6 col-lg-6 col-xl-5">
+                <div class="course-information grow">
+                    <h1 class="course-title">HTML and CSS for beginners</h1>
+                    <p class="course-description">This is the perfect course for people
+                    who want to start learning how to build websites. In this course we are gonna learn everything
+                    you need to know about builing websites using HTML and CSS.</p>
+                    <p class="section-info">20 september 2020</p>
+                    <br>
+                    <a href="#"><button class="start-button">Download course assets</button></a>
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-6 col-lg-6 col-xl-5">
+                <img class="course-image grow" src="/assets/html.png">
+            </div>
+            <div class="col-xl-1"></div>
+        </div>
+        <div class="row section-row">
+            <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                <div class="card section-card grow">
+                    <div class="row card-row">
+                        <div class="col-sm-12 col-md-6 col-lg-8 col-xl-8">
+                            <div class="card-info">
+                                <h5 class="section-title">Section 1: iOS and Swift for beginners</h5>
+                                <p class="section-info"> 180 lessons</p><span class="section-info">18 hours</span>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 col-md-6 col-lg-4 col-xl-4">
+                            <img class="section-img" src ="/assets/test.png">
+                        </div>
+                    </div>
+                    <div class="row description-row">
+                        <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                            <p class="section-description">In this section we are gonna learn what HTML and CSS are and what we use it for. 
+                            We are gonna talk about HTML, CSS and we are gonna talk about different kind of code editors and which
+                            one we are gonna use in this course. </p>
+                        </div>
+                    </div>
+                
+                </div>
+            </div>
+        </div>
+        <div class="row certificate-row">
+
+        </div>
+    </div>
+</div>
+    #extend("oxygen-web/footer")
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

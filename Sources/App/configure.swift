@@ -25,7 +25,6 @@ public func configure(_ app: Application) throws {
      app.middleware.use(corsMiddleWare)
     app.middleware.use(ErrorMiddleware.default(environment: app.environment))
     app.middleware.use(app.sessions.middleware)
-     app.http.server.configuration.hostname = "localhost"
     
     
     // MARK: Configure leaf

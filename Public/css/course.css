@@ -1,0 +1,98 @@
+
+
+.course-container {
+    max-width: 2000px;
+    min-height: 400px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.information-row {
+    margin-top: 50px;
+
+}
+
+.course-information {
+    max-width: 450px;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+.course-title {
+    color: white;
+    font-weight: bold;
+}
+
+.course-description {
+    color: white;
+    margin-top: 50px;
+}
+
+.course-image {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    width: 400px;
+    height: auto;
+}
+
+.start-button {
+    margin-top: 20px;
+    background-color: #526EB9;
+    height: 51px;
+    width: 190px;
+    border: none;
+    color: white;
+}
+
+.section-row {
+    margin-top: 80px;
+    margin-bottom: 80px;
+}
+
+.section-card {
+    background-color: #1A1A1E;
+    max-width: 900px;
+    min-height: 280px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.card-row {
+    margin-top: 30px;
+
+}
+
+.card-info {
+    margin-left: 30px;
+}
+
+.section-title {
+    color: white;
+    font-weight: bold;
+}
+
+.section-info {
+    color: #AAAAAA;
+    display: inline;
+}
+
+span {
+    margin-left: 20px;
+}
+
+.section-img {
+    display: block;
+    margin-left: auto;
+    margin-right: 30px;
+}
+
+.section-description {
+    margin-left: 30px;
+    margin-right: 30px;
+    margin-top: 30px;
+    color: #AAAAAA;
+}
+

@@ -11,14 +11,23 @@ body {
 }
 /* Navbar */
 
+.dev-nav {
+    margin-right: auto;
+    margin-left: auto;
+}
+
 .navbar-light .navbar-toggler-icon {
     background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(32, 87, 174, 1.0)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
+
+.extender {
+
 }
 
 .navbar-nav {
     margin-top: 10px;
     margin-left: auto;
-    margin-right: auto;
+    margin-right: 0px;
 }
 
 .logo {
@@ -32,6 +41,10 @@ nav .navbar-collapse .navbar-nav a{
     color: white !important;
     font-weight: bold;
     font-family: 'Oxygen', Courier;
+}
+
+.navbar-collapse {
+    margin-right: 50px;
 }
 
 
@@ -49,7 +62,6 @@ nav .navbar-collapse .navbar-nav a{
 }
 
 .dropdown {
-    margin-right: 0px;
 }
 
 .dropdown-menu {
