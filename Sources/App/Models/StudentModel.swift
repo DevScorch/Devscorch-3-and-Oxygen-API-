@@ -10,7 +10,7 @@ import FluentPostgresDriver
 import Vapor
 
 
-final class User: Model {
+final class Student: Model {
     
     struct Public: Content {
       let username: String
@@ -74,19 +74,20 @@ final class User: Model {
     }
 }
 
+extension Student: Authenticatable {}
 
-
-extension User: SessionAuthenticatable {
-    var sessionID: String {
-        self.username
+extension Student: SessionAuthenticatable {
+    typealias SessionID = UUID
+    var sessionID: SessionID {
+        self.id!
     }
 }
 
 
 
-extension User {
-    static func create(from userSignUp: UserSignUp) throws -> User {
-        User(username: userSignUp.username , password: try Bcrypt.hash(userSignUp.password), email: userSignUp.email)
+extension Student {
+    static func create(from userSignUp: UserSignUp) throws -> Student {
+        Student(username: userSignUp.username , password: try Bcrypt.hash(userSignUp.password), email: userSignUp.email)
     }
     
     func createToken(source: SessionSource) throws -> Token {
@@ -100,9 +101,9 @@ extension User {
     }
 }
 
-extension User: ModelAuthenticatable {
-    static let usernameKey = \User.$username
-    static let passwordHashKey = \User.$password
+extension Student: ModelAuthenticatable {
+    static let usernameKey = \Student.$username
+    static let passwordHashKey = \Student.$password
     
     func verify(password: String) throws -> Bool {
         try Bcrypt.verify(password, created: self.password)

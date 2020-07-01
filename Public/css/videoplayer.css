@@ -26,10 +26,9 @@
 }
 
 .videoplayer-player {
-    margin-right: 0px;
-    margin-left: 0px;
+    margin-right: auto;
+    margin-left: auto;
     margin-top: 0px;
-
 }
 
 .section-h4 {

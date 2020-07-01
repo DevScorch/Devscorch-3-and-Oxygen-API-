@@ -144,8 +144,19 @@ struct UserSignUp: Content {
     let email: String
 }
 
+struct RegisterPostData: Content {
+    let username: String
+    let password: String
+    let email: String
+}
+
 struct NewSession: Content {
     let token: String
-    let user: User.Public
+    let user: Student.Public
+}
+
+struct LoginPostData: Content {
+    let username: String
+    let password: String
 }
 

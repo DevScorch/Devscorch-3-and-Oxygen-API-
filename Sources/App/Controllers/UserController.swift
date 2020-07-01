@@ -9,14 +9,14 @@ struct UserController: RouteCollection {
     let tokenProtected = usersRoute.grouped(Token.authenticator())
     tokenProtected.get("me", use: getMyOwnUser)
     
-    let passwordProtected = usersRoute.grouped(User.authenticator())
+    let passwordProtected = usersRoute.grouped(Student.authenticator())
     passwordProtected.post("login", use: login)
   }
 
   fileprivate func create(req: Request) throws -> EventLoopFuture<NewSession> {
     try UserSignUp.validate(req)
     let userSignup = try req.content.decode(UserSignUp.self)
-    let user = try User.create(from: userSignup)
+    let user = try Student.create(from: userSignup)
     var token: Token!
 
     return checkIfUserExists(userSignup.username, req: req).flatMap { exists in
@@ -37,7 +37,7 @@ struct UserController: RouteCollection {
   }
 
   fileprivate func login(req: Request) throws -> EventLoopFuture<NewSession> {
-    let user = try req.auth.require(User.self)
+    let user = try req.auth.require(Student.self)
     let token = try user.createToken(source: .login)
 
     return token.save(on: req.db).flatMapThrowing {
@@ -45,12 +45,12 @@ struct UserController: RouteCollection {
     }
   }
 
-  func getMyOwnUser(req: Request) throws -> User.Public {
-    try req.auth.require(User.self).asPublic()
+  func getMyOwnUser(req: Request) throws -> Student.Public {
+    try req.auth.require(Student.self).asPublic()
   }
 
   private func checkIfUserExists(_ username: String, req: Request) -> EventLoopFuture<Bool> {
-    User.query(on: req.db)
+    Student.query(on: req.db)
       .filter(\.$username == username)
       .first()
       .map { $0 != nil }

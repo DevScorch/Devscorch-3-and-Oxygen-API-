@@ -22,13 +22,8 @@
               <div class="card-body">
                 <img class="logo" src="/assets/logo.png">
                 <h3 class="sign-in">Sign In</h3>
-                #if(loginError): {
-                    <div class="alert alert-danger" role="alert">
-                        User authentication error. Either your username or password was invalid
-                    </div>
-                }
-
-                <form method="post">
+                
+                  <form method="post">
                   <div class="form-group">
                     <input type="text" class="form-control" name="username" placeholder="Username" id="username"/>
                   </div>
@@ -39,6 +34,8 @@
                   <button type="submit" class="btn btn-primary sign-in-button">Sign In</button>
 
                 </form>
+                
+                
 
               </div> 
             </div>

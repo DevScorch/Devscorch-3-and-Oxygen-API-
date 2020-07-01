@@ -13,23 +13,29 @@ struct WebsiteController: RouteCollection {
     func boot(routes: RoutesBuilder) throws {
             
         //MARK: Authentication routes
-        let protectedRoute = routes.grouped(User.redirectMiddleware(path: "/login"))
+        let protectedRoute = routes.grouped(Student.redirectMiddleware(path: "/login"))
         let tokenProtected = routes.grouped(Token.authenticator())
-        let passwordProtected = routes.grouped(User.authenticator())
+        let passwordProtected = routes.grouped(Student.authenticator())
         
         routes.get(use: indexHandler)
         routes.get("login", use: loginHandler)
+        routes.grouped(UserCredentialAuthenticator()).post("login", use: loginPostHandler)
         routes.get("register", use: registerHandler)
+        
         routes.get("learning-guides", use: learningGuidesHandler)
         routes.get("learning-guides", "course", use: selectedCourseHandler)
         routes.get("learning-guides", "courses", "videoplayer", use: videoPlayerHandler)
         
+        
+        
     }
     
     func indexHandler(_ req: Request) throws -> EventLoopFuture<View> {
-        let userLoggedIn = try req.auth.has(User.self)
-        let loggedInUser = try req.auth.get(User.self)
+        let userLoggedIn = try req.auth.has(Student.self)
+        let loggedInUser = try req.auth.get(Student.self)
         let context = IndexContext(title: "\(title) Home")
+        
+        print()
         return req.view.render("oxygen-web/index", context)
     }
     
@@ -38,9 +44,53 @@ struct WebsiteController: RouteCollection {
         return req.view.render(loginURL, context)
     }
     
+    func loginPostHandler(_ req: Request) throws -> Response {
+        guard let user = req.auth.get(Student.self) else {
+            throw Abort(.unauthorized)
+        }
+        req.session.authenticate(user)
+        return req.redirect(to: guidedLearningURL)
+    }
+    
+    func logOutHandler(_ req: Request) throws -> Response {
+        req.auth.logout(Student.self)
+        req.session.unauthenticate(Student.self)
+        return req.redirect(to: indexURL)
+    }
+    
     func registerHandler(_ req:Request) throws -> EventLoopFuture<View> {
         let context = RegisterContext(title: "\(title) Register")
         return req.view.render(registerURL, context)
+    }
+    
+    func registerPostHandler(_ req: Request, userSignup: UserSignUp) throws -> EventLoopFuture<NewSession> {
+        try UserSignUp.validate(req)
+           let userSignup = try req.content.decode(UserSignUp.self)
+           let user = try Student.create(from: userSignup)
+           var token: Token!
+
+           return checkIfUserExists(userSignup.username, req: req).flatMap { exists in
+             guard !exists else {
+               return req.eventLoop.future(error: UserError.usernameTaken)
+             }
+
+             return user.save(on: req.db)
+           }.flatMap {
+             guard let newToken = try? user.createToken(source: .signup) else {
+               return req.eventLoop.future(error: Abort(.internalServerError))
+             }
+             token = newToken
+             return token.save(on: req.db)
+           }.flatMapThrowing {
+             NewSession(token: token.value, user: try user.asPublic())
+           }
+    }
+    
+    private func checkIfUserExists(_ username: String, req: Request) -> EventLoopFuture<Bool> {
+      Student.query(on: req.db)
+        .filter(\.$username == username)
+        .first()
+        .map { $0 != nil }
     }
     
     func learningGuidesHandler(_ req: Request) throws -> EventLoopFuture<View> {

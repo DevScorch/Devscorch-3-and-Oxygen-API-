@@ -20,7 +20,7 @@ final class Token: Model {
     var id: UUID?
     
     @Parent(key: "user_id")
-    var user: User
+    var user: Student
     
     @Field(key: "value")
     var value: String
@@ -36,7 +36,7 @@ final class Token: Model {
     
     init() {}
     
-    init(id: UUID? = nil, userId: User.IDValue, token: String,
+    init(id: UUID? = nil, userId: Student.IDValue, token: String,
       source: SessionSource, expiresAt: Date?) {
       self.id = id
       self.$user.id = userId

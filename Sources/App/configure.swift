@@ -38,6 +38,10 @@ public func configure(_ app: Application) throws {
         password: "password",
         database: "postgres"
     ), as: .psql)
+    
+    app.sessions.use(.fluent)
+    app.migrations.add(SessionRecord.migration)
+    app.middleware.use(app.sessions.middleware)
 
     app.migrations.add(CreateAdmin())
     app.migrations.add(CreateCourse())

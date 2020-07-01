@@ -61,6 +61,13 @@
                             one we are gonna use in this course. </p>
                         </div>
                     </div>
+                    <div class="row button-row">
+                        <div class="col-12">
+                            <a href="" class="watch-section">
+                                <img class="play-button" src="/assets/videos.png"> Start with this section
+                            </a>
+                        </div>
+                    </div>
                 
                 </div>
             </div>
