@@ -155,6 +155,11 @@ struct NewSession: Content {
     let user: Student.Public
 }
 
+struct NewAdminSession: Content {
+    let token: String
+    let admin: Admin.Public
+}
+
 struct LoginPostData: Content {
     let username: String
     let password: String

@@ -17,5 +17,13 @@ extension UserSignUp: Validatable {
     }
 }
 
+extension AdminSignUp: Validatable {
+    static func validations(_ validations: inout Validations) {
+        validations.add("username", as: String.self, is: !.empty)
+        validations.add("password", as: String.self, is: .count(6...))
+       // validations.add("email", as: String.self, is: !.empty)
+    }
+}
+
 
 

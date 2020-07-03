@@ -83,8 +83,6 @@ extension Student: SessionAuthenticatable {
     }
 }
 
-
-
 extension Student {
     static func create(from userSignUp: UserSignUp) throws -> Student {
         Student(username: userSignUp.username , password: try Bcrypt.hash(userSignUp.password), email: userSignUp.email)

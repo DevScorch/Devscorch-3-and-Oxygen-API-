@@ -56,9 +56,3 @@ struct UserController: RouteCollection {
       .map { $0 != nil }
   }
 }
-
-
-
-
-
-

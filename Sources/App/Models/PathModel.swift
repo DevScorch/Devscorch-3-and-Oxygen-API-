@@ -21,9 +21,16 @@ final class Path: Model, Content {
     
     init() {}
     
-    init(id: UUID, title: String) {
+    init(id: UUID? = nil, title: String) {
         self.id = id
         self.title = title
     }
     
+}
+
+extension Path {
+    
+    func create(from pathContext: PathContext) throws -> Path {
+        Path(title: pathContext.title)
+    }
 }

@@ -10,7 +10,6 @@ import Foundation
     //MARK: Versions
 
 var versionNumber: Double = 3.0
-var oxygenVersion: Double = 1.0
 
 //MARK: Titles
 
@@ -18,7 +17,7 @@ var title: String = "Devscorch \(versionNumber) |"
 
 //MARK: Learn Environment Render Page URLS
 
-var baseURL = "oxygen-web/"
+var baseURL = "oxygen-web"
 var indexURL = "\(baseURL)/index"
 var loginURL = "\(baseURL)/login"
 var registerURL = "\(baseURL)/register"

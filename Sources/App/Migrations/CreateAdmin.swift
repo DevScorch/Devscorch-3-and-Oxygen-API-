@@ -8,19 +8,22 @@
 import Fluent
 import FluentPostgresDriver
 
-
 struct CreateAdmin: Migration {
     func prepare(on database: Database) -> EventLoopFuture<Void> {
         return database.schema("admins")
             .id()
             .field("username", .string, .required).unique(on: "username")
-            .field("name", .string, .required)
+            .field("name", .string)
             .field("lastName", .string)
             .field("password", .string, .required)
             .field("image", .string)
             .field("description", .string)
             .field("githubURL", .string)
             .field("linkedInURL", .string)
+            .field("createdAt", .datetime, .required)
+            .field("updatedAt", .datetime, .required)
+            .field("email", .string, .required)
+
             .create()
     }
     

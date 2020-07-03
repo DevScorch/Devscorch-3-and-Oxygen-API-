@@ -44,6 +44,7 @@ public func configure(_ app: Application) throws {
     app.middleware.use(app.sessions.middleware)
 
     app.migrations.add(CreateAdmin())
+    app.migrations.add(CreateAdminToken())
     app.migrations.add(CreateCourse())
     app.migrations.add(CreateCourse())
     app.migrations.add(CreateLesson())
