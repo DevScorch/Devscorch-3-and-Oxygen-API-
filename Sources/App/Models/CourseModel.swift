@@ -33,9 +33,15 @@ final class Course: Model, Content {
     @Parent(key: "path_id")
     var path: Path
     
+    @Timestamp(key: "createdAt", on: .create)
+    var createdAt: Date?
+    
+    @Timestamp(key: "updatedAt", on: .update)
+    var updatedAt: Date?
+    
     init() {}
     
-    init(id: UUID, title: String, description: String, lessons: Int, image: String, assets: String, path: Path) {
+    init(id: UUID? = nil, title: String, description: String, lessons: Int, image: String, assets: String, path: Path) {
         self.id = id
         self.title = title
         self.description = description

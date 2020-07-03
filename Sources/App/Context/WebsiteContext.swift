@@ -37,13 +37,13 @@ struct LearningGuidesContext: Codable {
 
 }
 
-struct CourseContext: Codable {
-    var title: String
-//    let loggedInUser: User?
-//    let userLoggedIn: Bool
-//    let isSubscried: Bool
-
-}
+//struct CourseContext: Codable {
+//    var title: String
+////    let loggedInUser: User?
+////    let userLoggedIn: Bool
+////    let isSubscried: Bool
+//
+//}
 
 struct VideoPlayerContext: Codable {
     var title: String

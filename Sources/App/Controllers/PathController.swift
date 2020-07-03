@@ -14,7 +14,6 @@ struct PathController: RouteCollection {
         protectedPathRoute.post(":id", use: updatePath)
         protectedPathRoute.delete(":id", use: deletePath)
         
-        
     }
     
     func createPath(_ req: Request) throws -> EventLoopFuture<PathOutput> {

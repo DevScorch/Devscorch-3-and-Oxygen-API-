@@ -23,7 +23,7 @@ struct WebsiteController: RouteCollection {
         routes.get("register", use: registerHandler)
         
         routes.get("learning-guides", use: learningGuidesHandler)
-        routes.get("learning-guides", "course", use: selectedCourseHandler)
+       // routes.get("learning-guides", "course", use: selectedCourseHandler)
         routes.get("learning-guides", "courses", "videoplayer", use: videoPlayerHandler)
         
         
@@ -98,10 +98,10 @@ struct WebsiteController: RouteCollection {
         return req.view.render(guidedLearningURL, context)
     }
     
-    func selectedCourseHandler(_ req: Request) throws -> EventLoopFuture<View> {
-        let context = CourseContext(title: "\(title) Course")
-        return req.view.render(selectedCourseURL, context)
-    }
+//    func selectedCourseHandler(_ req: Request) throws -> EventLoopFuture<View> {
+//        let context = CourseContext(title: "\(title) Course")
+//        return req.view.render(selectedCourseURL, context)
+//    }
     
     func videoPlayerHandler(_ req: Request) throws -> EventLoopFuture<View> {
         let context = VideoPlayerContext(title: "\(title) Videoplayer")
