@@ -19,6 +19,15 @@ struct SectionController: RouteCollection {
     }
     
     func retrieveSection(_ req: Request) throws -> EventLoopFuture<SectionOutPut> {
+        guard let id = req.parameters.get("id", as: UUID.self) else {
+            throw Abort(.badRequest)
+        }
+        return Section.find(id, on: req.db).unwrap(or: Abort(.notFound)).map {
+            SectionOutPut(id: $0.id!.uuidString, image: $0.image, description: $0.description, title: $0.title, lessons: $0.lessons, course_id: $0.course_id)
+        }
+    }
+    
+    func updateSection(_ req: Request) throws -> EventLoopFuture<SectionOutPut> {
         
     }
     
