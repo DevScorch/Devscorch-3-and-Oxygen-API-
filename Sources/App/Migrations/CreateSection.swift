@@ -15,6 +15,7 @@ struct CreateSection: Migration {
             .field("description", .string, .required)
             .field("image", .string, .required)
             .field("lessons", .int, .required)
+            .field("course_id", .uuid, .required)
             .create()
     }
     

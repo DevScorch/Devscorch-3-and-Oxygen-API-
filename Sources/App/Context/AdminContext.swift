@@ -42,5 +42,24 @@ struct CourseOutput: Content {
     let assets: String
 }
 
+struct SectionContext: Content {
+    let id: String
+    let image: String
+    let description: String
+    let title: String
+    let lessons: Int
+    let course_id: Course
+}
+
+struct SectionOutPut: Content {
+    let id: String
+    let image: String
+    let description: String
+    let title: String
+    let lessons: Int
+    let course_id: Course
+
+}
+
 
 

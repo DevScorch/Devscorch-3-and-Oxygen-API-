@@ -9,6 +9,8 @@ struct CourseController: RouteCollection {
         protectedCourseRoute.post(use: createCourse)
         protectedCourseRoute.get(use: retrieveAllCourses)
         protectedCourseRoute.get(":id", use: retrieveCourse)
+        protectedCourseRoute.post(":id", use: updateCourse)
+        protectedCourseRoute.delete(":id", use: deleteCourse)
         
     }
     
@@ -16,7 +18,6 @@ struct CourseController: RouteCollection {
         let input = try req.content.decode(CourseContext.self)
         let course = Course(title: input.title!, description: input.description, lessons: input.lessons, image: input.image, assets: input.assets, path: input.path)
         return course.save(on: req.db).map {CourseOutput(id: course.id!.uuidString, title: course.title, description: course.description, image: course.image, lessons: course.lessons, assets: course.assets)
-            
         }
     }
     
@@ -38,15 +39,21 @@ struct CourseController: RouteCollection {
             throw Abort(.badRequest)
         }
         let input = try req.content.decode(Course.self)
-        return Course.find(id, on: req.db).unwrap(or: Abort(.notFound)).flatmap { course in
+        return Course.find(id, on: req.db).unwrap(or: Abort(.notFound)).flatMap { course in
             course.title = input.title
             course.description = input.description
             course.image = input.image
             course.assets = input.assets
             course.lessons = input.lessons
             return course.save(on: req.db)
-            
         }
+    }
+    
+    func deleteCourse(_ req: Request) throws -> EventLoopFuture<HTTPStatus> {
+        guard let id = req.parameters.get(":id", as: UUID.self) else {
+            throw Abort(.badRequest)
+        }
+        return Course.find(id, on: req.db).unwrap(or: Abort(.notFound)).flatMap {$0.delete(on: req.db)}.map {.ok}
     }
     
 }

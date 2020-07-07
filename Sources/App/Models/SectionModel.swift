@@ -27,13 +27,17 @@ final class Section: Model, Content {
     @Field(key: "lessons")
     var lessons: Int
     
+    @Parent(key: "course_id")
+    var course_id: Course
+    
     init() {}
     
-    init(id: UUID, title: String, description: String, image: String, lessons: Int) {
+    init(id: UUID? = nil, title: String, description: String, image: String, lessons: Int, course_id: Course) {
         self.id = id
         self.description = description
         self.image = image
         self.lessons = lessons
+        self.course_id = course_id
     }
     
 }
