@@ -14,11 +14,10 @@ struct CourseController: RouteCollection {
         
     }
     
-    func createCourse(_ req: Request) throws -> EventLoopFuture<CourseOutput> {
-        let input = try req.content.decode(CourseContext.self)
-        let course = Course(title: input.title!, description: input.description, lessons: input.lessons, image: input.image, assets: input.assets, path: input.path)
-        return course.save(on: req.db).map {CourseOutput(id: course.id!.uuidString, title: course.title, description: course.description, image: course.image, lessons: course.lessons, assets: course.assets)
-        }
+    func createCourse(_ req: Request) throws -> EventLoopFuture<Course> {
+        let course = try req.content.decode(Course.self)
+        return course.create(on: req.db).map { course }
+
     }
     
     func retrieveAllCourses(_ req: Request) throws -> EventLoopFuture<[Course]> {
@@ -30,7 +29,7 @@ struct CourseController: RouteCollection {
             throw Abort(.badRequest)
         }
         return Course.find(id, on: req.db).unwrap(or: Abort(.notFound)).map {
-            CourseOutput(id: $0.id!.uuidString, title: $0.title, description: $0.description, image: $0.image, lessons: $0.lessons, assets: $0.assets)
+            CourseOutput(id: $0.id!.uuidString, title: $0.title, description: $0.description, image: $0.image, lessons: $0.lessons, assets: $0.assets, path: $0.path)
         }
     }
     
@@ -45,7 +44,9 @@ struct CourseController: RouteCollection {
             course.image = input.image
             course.assets = input.assets
             course.lessons = input.lessons
-            return course.save(on: req.db)
+            return course.save(on: req.db).map {
+                CourseOutput(id: course.id!.uuidString, title: course.title, description: course.description, image: course.image, lessons: course.lessons, assets: course.assets, path: course.path)
+            }
         }
     }
     

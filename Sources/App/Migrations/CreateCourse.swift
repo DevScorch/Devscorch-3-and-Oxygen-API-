@@ -18,7 +18,9 @@ struct CreateCourse: Migration {
             .field("lessons", .int, .required)
             .field("image", .string, .required)
             .field("assets", .string, .required)
-            .field("path_id", .uuid, .required, .references("courses", "id"))
+            .field("path_id", .uuid, .references("paths", "id"))
+            .field("createdAt", .date)
+            .field("updatedAt", .date)
             .create()
     }
     

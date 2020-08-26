@@ -27,9 +27,9 @@ struct SectionController: RouteCollection {
         }
     }
     
-    func updateSection(_ req: Request) throws -> EventLoopFuture<SectionOutPut> {
-        
-    }
+//    func updateSection(_ req: Request) throws -> EventLoopFuture<SectionOutPut> {
+//        
+//    }
     
     
 }

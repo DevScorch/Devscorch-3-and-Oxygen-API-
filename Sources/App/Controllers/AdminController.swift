@@ -16,7 +16,7 @@ struct AdminController: RouteCollection {
     }
     
     fileprivate func create(req: Request) throws -> EventLoopFuture<NewAdminSession> {
-      try AdminSignUp.validate(req)
+        try AdminSignUp.validate(content: req)
       let adminSignup = try req.content.decode(AdminSignUp.self)
       let admin = try Admin.create(from: adminSignup)
       var token: AdminToken!

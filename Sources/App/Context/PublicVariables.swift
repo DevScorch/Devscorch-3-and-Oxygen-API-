@@ -9,50 +9,52 @@ import Foundation
 
     //MARK: Versions
 
-var versionNumber: Double = 3.0
+let versionNumber: Double = 3.0
 
 //MARK: Titles
 
-var title: String = "Devscorch \(versionNumber) |"
+let title: String = "Devscorch \(versionNumber) |"
 
 //MARK: Learn Environment Render Page URLS
 
-var baseURL = "oxygen-web"
-var indexURL = "\(baseURL)/index"
-var loginURL = "\(baseURL)/login"
-var registerURL = "\(baseURL)/register"
-var guidedLearningURL = "\(baseURL)/learning-guides"
-var selectedCourseURL = "\(baseURL)/course"
-var getStartedURL = "\(baseURL)/videoplayer"
-var discoveryURL = "\(baseURL)/discover"
-var tutorialURL = "\(baseURL)/tutorials"
-var selectedTutorialURL = "\(baseURL)/tutorial-selected"
-var challengeURL = "\(baseURL)/challenges"
+let baseURL = "oxygen-web"
+let indexURL = "\(baseURL)/index"
+let loginURL = "\(baseURL)/login"
+let registerURL = "\(baseURL)/register"
+let guidedLearningURL = "\(baseURL)/learning-guides"
+let selectedCourseURL = "\(baseURL)/course"
+let getStartedURL = "\(baseURL)/videoplayer"
+let discoveryURL = "\(baseURL)/discover"
+let tutorialURL = "\(baseURL)/tutorials"
+let selectedTutorialURL = "\(baseURL)/tutorial-selected"
+let challengeURL = "\(baseURL)/challenges"
 
 
 //MARK: Profile Render Page URLS
 
-var profilepageURL = "\(baseURL)/profile"
-var mySubscriptionURL = "\(baseURL)/my-subscription"
-var finishedCoursesURL = "\(baseURL)/finished-courses"
-var updateImageURL = "\(baseURL)/userimage"
-var invoicesURL = "\(baseURL)/invoices"
+let profilepageURL = "\(baseURL)/profile"
+let mySubscriptionURL = "\(baseURL)/my-subscription"
+let finishedCoursesURL = "\(baseURL)/finished-courses"
+let updateImageURL = "\(baseURL)/userimage"
+let invoicesURL = "\(baseURL)/invoices"
 
 //MARK: Stripe Subscription Render Page URLS
 
-var subscribeURL = "\(baseURL)/subscribe"
-var successURL = "\(baseURL)/success"
-var notSuccesfullURL = "\(baseURL)/not-succesfull"
-var cancelSubscriptionURL = "\(baseURL)/cancel"
+let subscribeURL = "\(baseURL)/subscribe"
+let successURL = "\(baseURL)/success"
+let notSuccesfullURL = "\(baseURL)/not-succesfull"
+let cancelSubscriptionURL = "\(baseURL)/cancel"
 
 //MARK: Error pages Render Page URLS
 
-var errorpageURL = "\(baseURL)/error"
-var notFoundURL = "\(baseURL)/not-found"
+let errorpageURL = "\(baseURL)/error"
+let notFoundURL = "\(baseURL)/not-found"
 
 
 //MARK: Admin Render pages URLS
 
-var baseAdminURL = "oxygen-admin/"
+let baseAdminURL = "oxygen-admin/"
+
+let adminIndex = "\(baseAdminURL)index"
 
 

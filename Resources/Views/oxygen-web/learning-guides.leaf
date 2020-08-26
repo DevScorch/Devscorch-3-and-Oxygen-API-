@@ -20,13 +20,19 @@
 
 <body> 
 <div class="container-fluid">
-        <div class="guided-container"> 
             #extend("base")
+
+        <div class="guided-container"> 
 
             <div class="learning-guides">
                         <div class="row guided-row">
-                            <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
-                                <h3 class="h3">IOS Developer Guide</h3>
+                            <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6">
+                                <div class="path-title">
+                                    <h3 class="h3">IOS Developer Guide</h3>
+                                </div>    
+                            </div>
+                            <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6">
+                                 
                             </div>
                         </div> 
                         <div class="row courses-row">
@@ -50,37 +56,48 @@
                                         </div>
                                     </div>
                                 </div>
-                              
-                            </div>
-                    </div>
-                <div class="row courses-row">
-                    <div class="col-sm-12 col-md-6 col-lg-6 col-xl-4">
-                        <div class="card grow">
-                            <div class="card-body">
-                                <div class="row top-row">
-                                    <div class="col-7"><h4 class="card-title">Xcode 14 walkthrough</h4></div>
-                                    <div class="col-5"><img class="card-image" src="/assets/xcode.png"></div>
-                                </div>
-                                <div class="middle-row">
-                                    <div class="col-8"><p class="card-p">20 lessons</p></div>
-                                    <div class="col-4"></div>
-                                </div>
-                                <div class="row bottom-row">
-                                    <div class="col-12"><p class="card-p">This is the perfect guide where you can learn all the
-                                        ins and outs of Xcode. You will learn about the UI, Testing and How you
-                                        can push and publish to the Appstore using Xcode.</p>
+                                <div class="col-sm-12 col-md-6 col-lg-6 col-xl-4">
+                                    <div class="card grow">
+                                        <div class="card-body">
+                                            <div class="row top-row">
+                                                 <div class="col-7"><h4 class="card-title">course.name</h4></div>
+                                                 <div class="col-5"><img class="card-image" src="/assets/xcode.png"></div>
+                                            </div>
+                                            <div class="middle-row">
+                                                <div class="col-8"><p class="card-p">20 lessons</p></div>
+                                                <div class="col-4"></div>
+                                            </div>
+                                            <div class="row bottom-row">
+                                                <div class="col-12"><p class="card-p">This is the perfect guide where you can learn all the
+                                                    ins and outs of Xcode. You will learn about the UI, Testing and How you
+                                                    can push and publish to the Appstore using Xcode.</p>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
+                                <div class="col-sm-12 col-md-6 col-lg-6 col-xl-4">
+                                    <div class="card grow">
+                                        <div class="card-body">
+                                            <div class="row top-row">
+                                                 <div class="col-7"><h4 class="card-title">course.name</h4></div>
+                                                 <div class="col-5"><img class="card-image" src="/assets/xcode.png"></div>
+                                            </div>
+                                            <div class="middle-row">
+                                                <div class="col-8"><p class="card-p">20 lessons</p></div>
+                                                <div class="col-4"></div>
+                                            </div>
+                                            <div class="row bottom-row">
+                                                <div class="col-12"><p class="card-p">This is the perfect guide where you can learn all the
+                                                    ins and outs of Xcode. You will learn about the UI, Testing and How you
+                                                    can push and publish to the Appstore using Xcode.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                         </div>
                     </div>
-                </div>    
-                
-            
-            </div>
-        
-        
-        
         </div>
     </div>
     #extend("oxygen-web/footer")

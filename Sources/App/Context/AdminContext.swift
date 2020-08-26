@@ -24,13 +24,12 @@ struct PathOutput: Content {
 }
 
 struct CourseContext: Content {
-    let id: String
     let title: String?
     let description: String
     let image: String
     let lessons: Int
     let assets: String
-    let path: Path
+    let path: UUID
 }
 
 struct CourseOutput: Content {
@@ -40,10 +39,10 @@ struct CourseOutput: Content {
     let image: String
     let lessons: Int
     let assets: String
+    let path: Path
 }
 
 struct SectionContext: Content {
-    let id: String
     let image: String
     let description: String
     let title: String

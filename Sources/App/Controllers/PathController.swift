@@ -25,10 +25,11 @@ struct PathController: RouteCollection {
     }
     
     func retrieveAllPaths(_ req: Request) throws -> EventLoopFuture<[Path]> {
-        return Path.query(on: req.db).all()
+        return Path.query(on: req.db).with(\.$courses).all()
     }
     
     func retrievePath(_ req: Request) throws -> EventLoopFuture<PathOutput> {
+        
         guard let id = req.parameters.get("id", as: UUID.self) else {
             throw Abort(.badRequest)
         }

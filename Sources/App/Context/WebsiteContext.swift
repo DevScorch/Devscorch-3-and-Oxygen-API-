@@ -3,13 +3,17 @@
 //  
 //
 //  Created by Johan on 19/06/2020.
-//
 
 import Vapor
 import Fluent
+import FluentKit
+
+struct Context: Encodable {
+    var title: String
+}
 
 
-struct IndexContext: Codable {
+struct IndexContext: Encodable {
     var title: String
 //    let loggedInUser: User?
 //    let userLoggedIn: Bool
@@ -17,20 +21,23 @@ struct IndexContext: Codable {
     
 }
 
-struct LoginContext: Codable {
+struct LoginContext: Encodable {
     var title: String
 //    let loggedInUser: User?
 //    let userLoggedIn: Bool
 }
 
-struct RegisterContext: Codable {
+struct RegisterContext: Encodable {
     var title: String
 //    let loggedInUser: User?
 //    let userLoggedIn: Bool
 }
 
-struct LearningGuidesContext: Codable {
-    var title: String
+struct LearningGuidesContext: Encodable {
+    let path: Path.ViewContext
+    let course: Course.ViewContext
+    
+    
 //    let loggedInUser: User?
 //    let userLoggedIn: Bool
 //    let isSubscried: Bool
@@ -39,9 +46,9 @@ struct LearningGuidesContext: Codable {
 
 //struct CourseContext: Codable {
 //    var title: String
-////    let loggedInUser: User?
-////    let userLoggedIn: Bool
-////    let isSubscried: Bool
+//    let loggedInUser: User?
+//    let userLoggedIn: Bool
+//    let isSubscried: Bool
 //
 //}
 
@@ -138,6 +145,8 @@ struct ChallengesContext: Codable {
 //    let isSubscried: Bool
 }
 
+// MARK: Authentication Context
+
 struct UserSignUp: Content {
     let username: String
     let password: String
@@ -164,4 +173,3 @@ struct LoginPostData: Content {
     let username: String
     let password: String
 }
-

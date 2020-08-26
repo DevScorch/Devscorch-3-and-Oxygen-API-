@@ -9,7 +9,7 @@ import Vapor
 import Leaf
 import Fluent
 
-struct WebsiteController: RouteCollection {
+struct FrontendController: RouteCollection {
     func boot(routes: RoutesBuilder) throws {
             
         //MARK: Authentication routes
@@ -64,7 +64,7 @@ struct WebsiteController: RouteCollection {
     }
     
     func registerPostHandler(_ req: Request, userSignup: UserSignUp) throws -> EventLoopFuture<NewSession> {
-        try UserSignUp.validate(req)
+        try UserSignUp.validate(content: req)
            let userSignup = try req.content.decode(UserSignUp.self)
            let user = try Student.create(from: userSignup)
            var token: Token!
@@ -94,8 +94,9 @@ struct WebsiteController: RouteCollection {
     }
     
     func learningGuidesHandler(_ req: Request) throws -> EventLoopFuture<View> {
-        let context = LearningGuidesContext(title: "\(title) Learning Guides")
-        return req.view.render(guidedLearningURL, context)
+            let context = Context(title: "\(title) Learning Guides")
+            return req.view.render(guidedLearningURL, context)
+        
     }
     
 //    func selectedCourseHandler(_ req: Request) throws -> EventLoopFuture<View> {

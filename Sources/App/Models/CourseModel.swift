@@ -41,15 +41,36 @@ final class Course: Model, Content {
     
     init() {}
     
-    init(id: UUID? = nil, title: String, description: String, lessons: Int, image: String, assets: String, path: Path) {
+    init(id: UUID? = nil, title: String, description: String, lessons: Int, image: String, assets: String, pathID: UUID) {
         self.id = id
         self.title = title
         self.description = description
         self.lessons = lessons
         self.image = image
         self.assets = assets
-        self.path = path
+        self.$path.id = pathID
     }
-    
-    
+}
+
+extension Course {
+    struct ViewContext: Encodable {
+        var id: String
+        var title: String
+        var description: String
+        var lessons: Int
+        var assets: String
+        var createdAt: Date
+        var updatedAt: Date
+        
+        init(model: Course) {
+            self.id = model.id!.uuidString
+            self.title = model.title
+            self.description = model.description
+            self.lessons = model.lessons
+            self.assets = model.assets
+            self.createdAt = model.createdAt!
+            self.updatedAt = model.updatedAt!
+        }
+    }
+    var viewContext: ViewContext {.init(model: self)}
 }

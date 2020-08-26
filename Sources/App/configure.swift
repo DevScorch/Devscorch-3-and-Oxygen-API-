@@ -44,19 +44,15 @@ public func configure(_ app: Application) throws {
     app.middleware.use(app.sessions.middleware)
 
     app.migrations.add(CreateAdmin())
+    app.migrations.add(CreatePath())
     app.migrations.add(CreateAdminToken())
     app.migrations.add(CreateCourse())
-    app.migrations.add(CreateCourse())
     app.migrations.add(CreateLesson())
-    app.migrations.add(CreatePath())
     app.migrations.add(CreateSection())
     app.migrations.add(CreateUser())
     app.migrations.add(CreateToken())
     app.migrations.add(CreateTutorial())
     
-
-    
-
     // register routes
     try routes(app)
     

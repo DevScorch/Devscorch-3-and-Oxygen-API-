@@ -9,7 +9,7 @@ import Fluent
 import FluentPostgresDriver
 import Vapor
 
-final class Path: Model, Content {
+final class Path: Model, Content, Encodable {
     static let schema = "paths"
     
     @ID(key: .id)
@@ -17,7 +17,9 @@ final class Path: Model, Content {
     
     @Field(key: "title")
     var title: String
-  
+    
+    @Children(for: \.$path)
+    var courses: [Course]
     
     init() {}
     
@@ -29,8 +31,16 @@ final class Path: Model, Content {
 }
 
 extension Path {
-    
-    func create(from pathContext: PathContext) throws -> Path {
-        Path(title: pathContext.title)
+    struct ViewContext: Encodable {
+        var id: String
+        var title: String
+        var courses: [Course]
+        
+        init(model: Path) {
+            self.id = model.id!.uuidString
+            self.title = model.title
+            self.courses = model.courses
+        }
     }
+    var viewContext: ViewContext { .init(model: self)}
 }

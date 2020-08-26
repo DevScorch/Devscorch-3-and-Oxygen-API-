@@ -1,9 +1,9 @@
 import Vapor
 import Fluent
 
-struct LessonController: RouteCollection {
-    
-    
-    
-    
-}
+//struct LessonController: RouteCollection {
+//    
+//    
+//    
+//    
+//}

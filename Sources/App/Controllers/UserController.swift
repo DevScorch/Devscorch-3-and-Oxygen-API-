@@ -14,7 +14,7 @@ struct UserController: RouteCollection {
   }
 
   fileprivate func create(req: Request) throws -> EventLoopFuture<NewSession> {
-    try UserSignUp.validate(req)
+    try UserSignUp.validate(content: req)
     let userSignup = try req.content.decode(UserSignUp.self)
     let user = try Student.create(from: userSignup)
     var token: Token!
