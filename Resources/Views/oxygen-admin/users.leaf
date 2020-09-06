@@ -9,13 +9,10 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link rel="stylesheet" type="text/css" href="/css/oxygen-admin/index.css">
-    <link rel="stylesheet" type="text/css" href="/css/oxygen-admin/base.css">
-
-    
-
+    <link rel="stylesheet" type="text/css" href="/css/oxygen-admin/users.css">
+    <link rel="stylesheet" type="text/css" href="/css/oxygen-admin/table.css">
+    <link rel="stylesheet" type="text/css" href="/css/oxygen-admin/base.css">        
         <title>#(title)</title>
 </head>
 
@@ -32,52 +29,36 @@
   <button id="sidebarCollapse" type="button" class="btn btn-light bg-white rounded-pill shadow-sm px-4 mb-4"><i class="fa fa-bars mr-2"></i><small class="text-uppercase font-weight-bold">Toggle</small></button>
 
   <!-- Demo content -->
-  <h2 class="display-4 text-white">Home</h2>
+  <h2 class="display-4 text-white">Users</h2>
   <div class="separator"></div>
         <div class="row">
-            <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3">
-                <div class="card" style="width: 16rem;">
+            <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                <div class="card">
                     <div class="card-body">
-                        <h5 class="card-title">Learning Guides</h5>
-                        <h6 class="card-subtitle mb-2 text-muted">#(guides)</h6>
-                        
+                        <table class="table">
+                            <tr>
+                                <th class="table-header">UUID</th>
+                                <th class="table-header">Name</th>
+                                <th class="table-header">Last Name</th>
+                                <th class="table-header">Username</th>
+                                <th class="table-header">Subscribed</th>
+                            </tr>
+                            #for(user in users):
+                            <tr>
+                                <td class="table-cell">#(user.id)</td>
+                                <td class="table-cell">#(user.name)</td>
+                                    
+                                    <td class="table-cell">#(user.lastname)</td>
+                                    <td class="table-cell">#(user.username)</td>
+                                    <td class="table-cell">#(user.isSubscribed)</td>                         
+                            </tr>  
+                            #endfor   
+                        </table>                        
                     </div>
                 </div>
             </div>
-            <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3">
-                <div class="card" style="width: 16rem;">
-                    <div class="card-body">
-                        <h5 class="card-title">Courses</h5>
-                        <h6 class="card-subtitle mb-2 text-muted">#(courses)</h6>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3">
-                <div class="card" style="width: 16rem;">
-                    <div class="card-body">
-                        <h5 class="card-title">Videos</h5>
-                        <h6 class="card-subtitle mb-2 text-muted">#(videos)</h6>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3">
-                <div class="card" style="width: 16rem;">
-                    <div class="card-body">
-                        <h5 class="card-title">Registered Users</h5>
-                        <h6 class="card-subtitle mb-2 text-muted">#(users)</h6>
-                    </div>
-                </div>
-            </div>
-            
         </div>  
 </div>
-<!-- End demo content -->
-
-
-
-        
-
-
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"

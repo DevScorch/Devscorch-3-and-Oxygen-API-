@@ -10,10 +10,14 @@ import Foundation
     //MARK: Versions
 
 let versionNumber: Double = 3.0
+let oxygenVersion = 1.0
+
 
 //MARK: Titles
 
 let title: String = "Devscorch \(versionNumber) |"
+let oxygenTitle = "Oxygen \(oxygenVersion) |"
+
 
 //MARK: Learn Environment Render Page URLS
 
@@ -53,8 +57,16 @@ let notFoundURL = "\(baseURL)/not-found"
 
 //MARK: Admin Render pages URLS
 
+
+
 let baseAdminURL = "oxygen-admin/"
 
 let adminIndex = "\(baseAdminURL)index"
+let userIndex = "\(baseAdminURL)users"
+let adminLogin = "\(baseAdminURL)login"
+let learningGuide = "\(baseAdminURL)learning-guides"
+let addLearningGuide = "\(baseAdminURL)add-learning-guide"
+let addCourse = "\(baseAdminURL)courses"
+ 
 
 

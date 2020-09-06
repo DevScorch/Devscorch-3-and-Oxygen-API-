@@ -57,8 +57,9 @@ struct SectionOutPut: Content {
     let title: String
     let lessons: Int
     let course_id: Course
-
 }
+
+
 
 
 

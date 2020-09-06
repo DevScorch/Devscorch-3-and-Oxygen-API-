@@ -1,0 +1,48 @@
+/* Table CSS. Here is all the CSS for the Tables used
+In the backend */
+
+
+table {
+  
+}
+
+th {
+    color: white;
+}
+
+tr td {
+    border: none;
+    border-style:hidden;
+
+}
+
+
+
+
+.table-cell {
+    color: white;
+    border: none;
+    border-style:hidden;
+}
+
+.card {
+    margin-right: 30px;
+    margin-left: 30px;
+    border: none;
+    margin-top: 20px;
+}
+
+.card-body {
+    background-color: #1A1A1E;
+    border: none;
+}
+
+.card-title {
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.card-subtitle {
+    color: white;
+}

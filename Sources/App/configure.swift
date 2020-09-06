@@ -29,6 +29,7 @@ public func configure(_ app: Application) throws {
     
     // MARK: Configure leaf
     
+    app.middleware.use(FileMiddleware(publicDirectory: app.directory.publicDirectory))
     app.views.use(.leaf)
     app.leaf.cache.isEnabled = app.environment.isRelease
 
