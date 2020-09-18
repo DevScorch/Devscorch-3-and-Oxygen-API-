@@ -27,6 +27,9 @@ final class Course: Model, Content {
     @Field(key: "image")
     var image: String
     
+    @Field(key: "imageKey")
+    var imageKey: String?
+    
     @Field(key: "assets")
     var assets: String
     
@@ -41,12 +44,13 @@ final class Course: Model, Content {
     
     init() {}
     
-    init(id: UUID? = nil, title: String, description: String, lessons: Int, image: String, assets: String, pathID: UUID) {
+    init(id: UUID? = nil, title: String, description: String, lessons: Int, image: String, imageKey: String? = nil, assets: String, pathID: UUID) {
         self.id = id
         self.title = title
         self.description = description
         self.lessons = lessons
         self.image = image
+        self.imageKey = imageKey
         self.assets = assets
         self.$path.id = pathID
     }
@@ -74,3 +78,5 @@ extension Course {
     }
     var viewContext: ViewContext {.init(model: self)}
 }
+
+

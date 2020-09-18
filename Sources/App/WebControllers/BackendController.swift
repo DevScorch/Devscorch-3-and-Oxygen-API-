@@ -15,9 +15,12 @@ struct BackendController: RouteCollection{
         routes.get("oxygen-admin", use: indexHandler)
         routes.get("oxygen-admin", "users", use: userPageHandler)
         routes.get("oxygen-admin", "learning-guides", use: learningGuidesHandler)
-        routes.get("oxygen-admin", "add-learning-guide", use: addLearningGuideHandler)
+        routes.get("oxygen-admin", "courses", use: coursesHandler)
+        routes.get("oxygen-admin", "add-course", use: createCourseView)
         
-        routes.post("oxygen-admin", "add-learning-guide", use: addLearningGuidePostHandler)
+        routes.post("oxygen-admin", "learning-guides", use: addLearningGuidePostHandler)
+        routes.post("oxygen-admin", "add-course", use: addCoursePostHandler)
+        
     }
     
     
@@ -40,6 +43,8 @@ struct BackendController: RouteCollection{
         }
     }
     
+    // MARK: Oxygen User Handlers ------------------------------------------------------------------>
+    
     func userPageHandler(_ req: Request) throws -> EventLoopFuture<View> {
         let title = "\(oxygenTitle) Users"
         let url = userIndex
@@ -55,6 +60,8 @@ struct BackendController: RouteCollection{
         }
     }
     
+    // MARK: Oxygen Learning Guides Handler ---------------------------------------------------------->
+    
     func learningGuidesHandler(_ req: Request) throws -> EventLoopFuture<View> {
         let title = "\(oxygenTitle) Learning Guides"
         let guides = Path.query(on: req.db).all()
@@ -69,17 +76,73 @@ struct BackendController: RouteCollection{
         }
     }
     
-    func addLearningGuideHandler(_ req: Request) throws -> EventLoopFuture<View> {
-        let title = "\(oxygenTitle) Add Learning Guide"
-        let context = AddLearningGuideContext(title: title, oxygenVersion: oxygenVersion, devscorchVersion: versionNumber)
-        return req.view.render(addLearningGuide, context)
+    func addLearningGuidePostHandler(_ req: Request) throws -> EventLoopFuture<Response> {
+       let input = try req.content.decode(PathContext.self)
+        let path = Path(title: input.title)
+        return path.save(on: req.db).map { guide in
+            return req.redirect(to: "learning-guides")
+            
+        }
     }
     
-    func addLearningGuidePostHandler(_ req: Request) throws -> EventLoopFuture<Response> {
-        let guide = Path()
-        
-        return guide.save(on: req.db).map { guide in
-            return req.redirect(to: learningGuide)
+  
+    
+    // MARK: Oxygen Course Handlers ------------------------------------------------------------------>
+    
+    func coursesHandler(_ req: Request) throws -> EventLoopFuture<View> {
+        let title = "\(oxygenTitle) Courses"
+        let courses = Course.query(on: req.db).all()
+        return courses.flatMap { course in
+            let (courses) = course
+            let context = CoursesContext(title: title, oxygenVersion: oxygenVersion, devscorchVersion: versionNumber, courses: courses)
+            print(courses)
+            return req.view.render(coursePage, context)
+        }
+    }
+    
+    func createCourseView(_ req: Request) throws -> EventLoopFuture<View> {
+        return try! addCourseHandler(req, form: .init())
+    }
+    
+    func beforeRender(_ req: Request, form: CourseForm) -> EventLoopFuture<Void> {
+        Path.query(on: req.db).all().mapEach(\.formFieldOption).map { form.pathID.options = $0 }
+    }
+    
+    func addCourseHandler(_ req: Request, form: CourseForm) throws -> EventLoopFuture<View> {
+        let title = "\(oxygenTitle) Add a Course"
+        let context = AddCourseContext(title: title, oxygenVersion: oxygenVersion, devscorchVersion: versionNumber, edit: form)
+
+        return self.beforeRender(req, form: form).flatMap {
+            req.view.render(addCoursePage, context)
+        }
+    }
+    func beforeAddCoursePostHandler(_ req: Request, model: Course, form: CourseForm) -> EventLoopFuture<Course> {
+        var future: EventLoopFuture<Course> = req.eventLoop.future(model)
+        if let data = form.image.data {
+            let key = addCoursePage + UUID().uuidString + "jpg"
+            future = req.fs.upload(key: key, data: data).map { url in
+                form.image.value = url
+                model.imageKey = key
+                model.image = url
+                return model
+            }
+        }
+        return future
+    }
+    
+    func addCoursePostHandler(_ req: Request) throws -> EventLoopFuture<Response> {
+        let form = try CourseForm(req: req)
+        return form.validate(req).flatMap { isValid -> EventLoopFuture<Response> in
+            guard isValid else {
+                return try! self.addCourseHandler(req, form: form).encodeResponse(for: req)
+            }
+            let model = Course()
+            form.writeCourse(to: model)
+            return self.beforeAddCoursePostHandler(req, model: model, form: form).flatMap { model in
+                return model.create(on: req.db).map { req.redirect(to: coursePage)}
+            }
+            
+            
         }
     }
 }

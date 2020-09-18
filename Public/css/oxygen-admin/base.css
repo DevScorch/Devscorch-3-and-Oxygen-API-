@@ -2,7 +2,7 @@
 
 body, html {
     font-family: 'Oxygen', sans-serif;
-    background-color: #111115;
+    background-color:rgb(245, 246, 248);
 
 }
 
@@ -12,11 +12,14 @@ body, html {
   margin-left: auto;
   border: none;
   margin-top: 20px;
+  border: 1px;
+  border-color: gray;
 }
 
 .card-body {
-  background-color: #1A1A1E;
-  border: none;
+  background-color: rgb(255, 255, 255);
+  border: 1px;
+  border-color: gray;
 }
 
 .card-title {
@@ -39,6 +42,7 @@ body, html {
 
 /* Navigation part */
 .vertical-nav {
+
     min-width: 17rem;
     width: 17rem;
     height: 100vh;

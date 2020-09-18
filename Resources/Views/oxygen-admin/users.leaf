@@ -18,7 +18,7 @@
 
 <body>
 
-<div class="vertical-nav bg-white" id="sidebar">
+<div class="vertical-nav bg-dark" id="sidebar">
  #extend("oxygen-admin/base"):
  #endextend
 </div>

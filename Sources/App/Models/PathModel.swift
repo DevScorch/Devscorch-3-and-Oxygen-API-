@@ -44,3 +44,9 @@ extension Path {
     }
     var viewContext: ViewContext { .init(model: self)}
 }
+
+extension Path: FormFieldOptionRepresentable {
+    var formFieldOption: FormFieldOption {
+        .init(key: self.id!.uuidString, label: self.title)
+    }
+}

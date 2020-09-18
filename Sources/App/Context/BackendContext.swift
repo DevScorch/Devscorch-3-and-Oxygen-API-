@@ -62,17 +62,12 @@ struct CoursesContext: Content {
     let courses: [Course]
 }
 
-struct AddCourseContext: Content {
+struct AddCourseContext<T:Encodable>: Encodable {
     let title: String
     let oxygenVersion: Double
     let devscorchVersion: Double
-    let courseTitle: String
-    let description: String
-    let lessons: Int
-    let image: String
-    let assets: String
-    let path: Path.IDValue
-    let createdAt: Date?
+    let edit: T
+    
 }
 
 

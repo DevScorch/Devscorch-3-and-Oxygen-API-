@@ -30,7 +30,7 @@
   <button id="sidebarCollapse" type="button" class="btn btn-light bg-white rounded-pill shadow-sm px-4 mb-4"><i class="fa fa-bars mr-2"></i><small class="text-uppercase font-weight-bold">Hide Sidebar</small></button>
 
   <!-- Demo content -->
-  <h2 class="display-4 text-dark">Learning Guides</h2>
+  <h2 class="display-4 text-dark">Courses</h2>
   </p>
         <div class="row">
             <div class="col-sm-12 col-md-12 col-lg-6 col-xl-8">
@@ -40,17 +40,22 @@
                           <thead>
                             <tr>
                               <th scope="col ">UUID</th>
-                              <th scope="col ">Learning Guide</th>
+                              <th scope="col ">Title</th>
+                              
+                              <th scope="col ">Lessons</th>
+                              
                             </tr>
                           </thead>
                           <tbody>
                             </tr>
-                            #for(guide in guides):
+                            #for(course in courses):
                               <tr>
-                                    <td class=""><a class="table-cell" href="">#(guide.id)</a></td>
-                                    <td class=""><a class="table-cell" href="">#(guide.title)</a></td>
+                                    <td class=""><a class="table-cell" href="">#(course.id)</a></td>
+                                    <td class=""><a class="table-cell" href="">#(course.title)</a></td>
+                                    <td class=""><a class="table-cell" href="">#(course.lessons)</a></td>
                               </tr>
                             #endfor    
+                            
                           </tbody>
                         </table>                  
                     </div>
@@ -73,7 +78,6 @@
                     </div>
                 </div>
             </div>
-            
         </div>  
 </div>
     <!-- Optional JavaScript -->

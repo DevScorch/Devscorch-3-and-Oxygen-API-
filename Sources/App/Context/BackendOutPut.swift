@@ -23,13 +23,15 @@ struct PathOutput: Content {
     let title: String
 }
 
-struct CourseContext: Content {
-    let title: String?
+struct CoursePostContext: Decodable {
+    let id: String? = nil
+    let title: String
     let description: String
-    let image: String
+    let image: File?
     let lessons: Int
     let assets: String
-    let path: UUID
+    let pathID: String
+    let imageDelete: Bool?
 }
 
 struct CourseOutput: Content {

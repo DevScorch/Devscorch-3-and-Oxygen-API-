@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" type="text/css" href="/css/oxygen-admin/learning-guides.css">
+    <link rel="stylesheet" type="text/css" href="/css/oxygen-admin/base.css"> 
+    <link rel="stylesheet" type="text/css" href="/css/oxygen-admin/forms.css">
+    <link rel="stylesheet" type="text/css" href="/css/oxygen-admin/base.css">        
+        <title>#(title)</title>
+</head>
+
+<body>
+
+<div class="vertical-nav bg-dark" id="sidebar">
+ #extend("oxygen-admin/base"):
+ #endextend
+</div>
+
+<!-- Page content holder -->
+<div class="page-content p-5" id="content">
+  <!-- Toggle button -->
+  <button id="sidebarCollapse" type="button" class="btn btn-light bg-white rounded-pill shadow-sm px-4 mb-4"><i class="fa fa-bars mr-2"></i><small class="text-uppercase font-weight-bold">Hide Sidebar</small></button>
+
+  <!-- Demo content -->
+  <h2 class="display-4 text-dark">Add a Course</h2>
+  </p>
+  <div class="separator"></div>
+        <div class="row">
+            <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                <div class="card">
+                    <div class="card-body">
+                   
+                        <form method="post">
+                            <div class="row">
+                                <div class="col">
+                                <label for="title">UUID</label>
+                                <input disabled="true"  type="text" class="form-control" placeholder="UUID will be automatically generated!">
+                                </div>
+                                <div class="col">
+                                <label for="title">Title <span class="required">(required)</span></label>
+                                <input type="text" class="form-control"  name="title" id="title" value="#(edit.title.value)" placeholder="What is the title of your course?">
+                                #if(edit.title.error != nil):
+                                <span class="error">#(edit.title.error)</span>
+                                #endif
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                <label for="title">Lessons <span class="required">(required)</span></label>
+                                <input type="text" class="form-control" name="lessons" value="#(edit.lessons.value)" placeholder="How many lessons does your course have?">
+                                #if(edit.lessons.error != nil):
+                                <span class="error">#(edit.lessons.error)</span>
+                                #endif
+                                </div>
+                                <div class="col">
+                                <label for="title">Image <span class="required">(required)</span></label>
+                                <img id="uploaded-image" src="#(edit.image.value)">
+                                #if(edit.image.error != nil):
+                                <span class="error">#(edit.image.error)</span>
+                                #endif
+                                <br>
+                                <a id="choose-button" class="btn btn-light bg-white rounded-pill shadow-sm px-4 mb-4" href="javascript:void(0);" onclick="chooseImage();"><i class="fa fa-bars mr-2"></i><small class="text-uppercase font-weight-bold">Upload image</small></a>
+                                    <a id="remove-button" class="btn btn-light bg-white rounded-pill shadow-sm px-4 mb-4" href="javascript:void(0);" onclick="removeImage()"><i class="fa fa-bars mr-2"></i><small class="text-uppercase font-weight-bold">Delete image</small></a>
+                                    <input id="imageDelete" name="imageDelete" type="hidden"
+                                    value="false">
+                                    <input id="image" name="image.value)" type="file" accept="image/jpeg" style="display:none;">
+                                </div>
+                                
+                            </div>
+                            <br>
+                            <div class="row">
+                                <div class="col-6">
+                                <label for="title">Assets <span class="required">(required)</span></label>
+                                <input type="text" class="form-control" name="assets" value="#(edit.assets.value)" placeholder="Where are your assets stored?">
+                                #if(edit.lessons.error != nil):
+                                <span class="error">#(edit.lessons.error)</span>
+                                #endif
+                                </div>
+                                <div class="col-6">
+                                <label for="Learning Guide">Guide <span class="required">(required)</span></label>
+                                <select name="pathID">
+                                #for(item in edit.pathID.options):
+                                    <option #if(item.key == edit.pathID.value): selected="selected" #endif value="#(item.key)">#(item.label)</option>
+                                #endfor
+
+                                    
+                                </select>
+                                </div>
+                                
+                                
+                            </div>
+                            <br>
+                            <div class="row">
+                                <div class="col">
+                                <label class="text-label" for="title">Description <span class="required">(required)</span></label>
+                                <textarea type="text" name ="description" class="form-control" placeholder="Tell your students about this course :)">#(edit.description.value)</textarea>
+                                #if(edit.description.error != nil):
+                                <span class="error">#(edit.description.error)</span>
+                                #endif
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-light bg-white rounded-pill shadow-sm px-4 mb-4 add-learning-guide-button"><i class="fa fa-bars mr-2"></i><small class="text-uppercase font-weight-bold">Add new Course</small></button>
+                        </form>           
+                    </div>
+                </div>
+            </div>
+        </div>  
+</div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <script src="/js/nav.js"></script>
+    <script src="/js/choose-image.js"></script>
+</body>
+
+</html>

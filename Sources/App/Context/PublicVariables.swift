@@ -66,7 +66,8 @@ let userIndex = "\(baseAdminURL)users"
 let adminLogin = "\(baseAdminURL)login"
 let learningGuide = "\(baseAdminURL)learning-guides"
 let addLearningGuide = "\(baseAdminURL)add-learning-guide"
-let addCourse = "\(baseAdminURL)courses"
+let coursePage = "\(baseAdminURL)courses"
+let addCoursePage = "\(baseAdminURL)add-course"
  
 
 

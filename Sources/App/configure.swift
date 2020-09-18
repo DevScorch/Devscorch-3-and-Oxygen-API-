@@ -2,6 +2,8 @@ import Fluent
 import FluentPostgresDriver
 import Vapor
 import Leaf
+import Liquid
+import LiquidLocalDriver
 
 // configures your application
 public func configure(_ app: Application) throws {
@@ -26,6 +28,10 @@ public func configure(_ app: Application) throws {
     app.middleware.use(ErrorMiddleware.default(environment: app.environment))
     app.middleware.use(app.sessions.middleware)
     
+    // MARK: Liquid MiddleWare
+
+    app.routes.defaultMaxBodySize = "150mb"
+    app.fileStorages.use(.local(publicUrl: "http://localhost:8080", publicPath: app.directory.publicDirectory, workDirectory: "assets"), as: .local)
     
     // MARK: Configure leaf
     

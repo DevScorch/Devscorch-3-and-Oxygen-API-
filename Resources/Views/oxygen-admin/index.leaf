@@ -21,7 +21,7 @@
 
 <body>
 
-<div class="vertical-nav bg-white" id="sidebar">
+<div class="vertical-nav bg-dark" id="sidebar">
  #extend("oxygen-admin/base"):
  #endextend
 </div>
@@ -32,7 +32,7 @@
   <button id="sidebarCollapse" type="button" class="btn btn-light bg-white rounded-pill shadow-sm px-4 mb-4"><i class="fa fa-bars mr-2"></i><small class="text-uppercase font-weight-bold">Toggle</small></button>
 
   <!-- Demo content -->
-  <h2 class="display-4 text-white">Home</h2>
+  <h2 class="display-4 text-dark">Home</h2>
   <div class="separator"></div>
         <div class="row">
             <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3">

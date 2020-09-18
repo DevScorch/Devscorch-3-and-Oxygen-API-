@@ -20,7 +20,7 @@
 
 <body>
 
-<div class="vertical-nav bg-white" id="sidebar">
+<div class="vertical-nav bg-dark" id="sidebar">
  #extend("oxygen-admin/base"):
  #endextend
 </div>
@@ -31,7 +31,7 @@
   <button id="sidebarCollapse" type="button" class="btn btn-light bg-white rounded-pill shadow-sm px-4 mb-4"><i class="fa fa-bars mr-2"></i><small class="text-uppercase font-weight-bold">Hide Sidebar</small></button>
 
   <!-- Demo content -->
-  <h2 class="display-4 text-white">Add a Learning Guide</h2>
+  <h2 class="display-4 text-dark">Add a Learning Guide</h2>
   </p>
   <div class="separator"></div>
         <div class="row">
@@ -50,7 +50,6 @@
                                 </div>
                             </div>
                             <button type="submit" class="btn btn-light bg-white rounded-pill shadow-sm px-4 mb-4 add-learning-guide-button"><i class="fa fa-bars mr-2"></i><small class="text-uppercase font-weight-bold">Add Learning Guide</small></button>
-                        
                         </form>           
                     </div>
                 </div>

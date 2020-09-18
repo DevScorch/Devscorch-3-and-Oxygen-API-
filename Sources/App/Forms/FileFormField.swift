@@ -1,0 +1,15 @@
+//
+//  File.swift
+//  
+//
+//  Created by Johan on 15/09/2020.
+//
+
+import Foundation
+
+struct FileFormField: Encodable {
+    var value: String = ""
+    var error: String? = nil
+    var data: Data? = nil
+    var delete: Bool = false
+}
